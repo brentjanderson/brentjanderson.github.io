@@ -1,13 +1,247 @@
----
-layout: default
-title: Brent's Blog
----
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Brent Anderson</title>
+        <meta name="description" content="Brent Anderson's Personal Website">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-</div>
+        <link rel="stylesheet" href="/css/readable.min.css">
+        <link rel="stylesheet" href="/css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="/css/main.css">
+
+    </head>
+    <body data-spy="scroll" data-target=".navbar-scrollspy" data-offset="90">
+
+        <div class="navbar navbar-scrollspy navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="/">Brent Anderson</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="#about">About</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#contact">Contact Me</a></li></ul>
+                        <ul class="nav pull-right social-icons visible-desktop">
+                            <li><a href="http://blog.brentjanderson.com/" class="ba-tooltip" title="My Blog" target="_blank"><img src="img/nav/tumblr.png" alt="My Blog" /></a></li>
+                            <li><a href="http://www.linkedin.com/profile/view?id=10341225" class="ba-tooltip" title="LinkedIn" target="_blank"><img src="img/nav/linkedin.png" alt="LinkedIn"/></a></li>
+                            <li><a href="http://www.twitter.com/brentjanderson" class="ba-tooltip" title="Twitter" target="_blank"><img src="img/nav/twitter.png" alt="Twitter" /></a></li>
+                            <li><a href="http://www.github.com/brentjanderson" class="ba-tooltip" title="GitHub" target="_blank"><img src="img/nav/github.png" alt="Github" /></a></li>
+                            <li><a href="https://plus.google.com/114113651855190564904/posts" class="ba-tooltip" title="Google+" target="_blank"><img src="img/nav/googleplus.png" alt="Google+" /></a></li>
+                        </ul>
+                        <ul class="nav pull-right social-icons hidden-desktop">
+                            <li class="nav-header">Brent on Social Media</li>
+                            <li><a href="http://blog.brentjanderson.com/" target="_blank"><i class="icon-file"></i> My Blog</a></li>
+                            <li><a href="http://www.linkedin.com/profile/view?id=10341225" target="_blank"><i class="icon-briefcase"></i> LinkedIn</a></li>
+                            <li><a href="http://www.twitter.com/brentjanderson" target="_blank"><i class="icon-comment"></i> Twitter</a></li>
+                            <li><a href="http://www.github.com/brentjanderson" target="_blank"><i class="icon-cog"></i> Github</a></li>
+                            <li><a href="https://plus.google.com/114113651855190564904/posts" target="_blank"><i class="icon-plus"></i> Google+</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+          <div class="row-fluid" id="about">
+              <div class="span5 bio-box">
+                  <img class="img-polaroid img-polaroid-large" src="img/headshot.png" alt="Brent's Picture"/>
+              </div>
+
+              <div class="span7">
+                  <h1>About Brent</h1>
+                  <p class="lead">I'm an information systems professional &amp; entrepreneur.</p>
+
+              <h3>Who I am</h3>
+              <blockquote><em>
+                      Technology is nothing. What's important is that you have a faith in people,
+                      that they're basically good and smart, and if you give them tools,
+                      they'll do wonderful things with them.
+                  </em> <br/>~ Steve Jobs</blockquote>
+
+              <p>I love to build great tools that enable greater business success.</p>
+                  <p>I have invested a decade solving business problems and capturing value
+                  in the entertainment, education, consumer goods,
+                  marketing, nonprofit, and hospitality industries using a
+                  <a href="#portfolio">wide variety of tools and strategies</a>.</p>
+              <p>I love to teach, read, cook, listen to great music, and
+                  <a href="http://blog.brentjanderson.com">write</a>.</p>
+              </div>
+          </div>
+          <div class="row-fluid">
+              <div class="span12">
+              <h3>What I do</h3>
+              <p>I am the Technology Manager at <a href="https://www.blenderbottle.com" target="_blank">BlenderBottle</a>,
+              a fast-growing global leader in the health and fitness industry. Outside of management duties, I am
+              our software and information architect, and enjoy improving our business processes and consumer experience
+              through great technology.</p>
+              <p>I recently completed a Master's degree in Information Systems Management at
+                  <a href="http://www.byu.edu" target="_blank">Brigham Young University</a>,
+                  emphasizing in Business Intelligence and Analytics.</p>
+
+                  <p>
+                      I also serve as a board member for
+                      <a href="http://www.spaceedventures.org">a local non-profit</a>, and provide
+                      consulting services as
+                      <a href="http://infinitedev.com" target="_blank">Infinite Development Group</a>.
+                  </p>
+
+                  <p>
+                      In addition to my professional endeavors, I try to be active
+                      in public affairs and pertinent political issues,
+                      especially concerning censorship, certain education initiatives,
+                      and general elections. I was interviewed by CBS news in January 2012
+                      regarding <a href="http://en.wikipedia.org/wiki/Stop_Online_Piracy_Act" target="_blank">SOPA/PIPA</a> legislation,
+                      and have consulted for various local, state, and federal political efforts,
+                      with a focus on organizing technology for grassroots campaigns
+                      and using Voice over IP for campaigns to cost-effectively reach their audience.
+                  </p>
+
+              <h3>Consulting &amp; Presentations</h3>
+              <p>See <a href="#portfolio">My Portfolio</a> and
+                  <a href="https://www.github.com/brentjanderson" target="_blank">
+                  my GitHub profile</a> for samples of my work and skillset.
+                  <a href="mailto:me@brentjanderson.com?subject=Consulting">Contact me</a>
+                  for my current availability, rates, and details.</p>
+
+                  <h3>Published Work</h3>
+                  <p>I keep an active Blog
+                  <a href="http://blog.brentjanderson.com/" target="_blank">here</a>.
+                  Most of my posts are reposted links and articles I find interesting,
+                  however I have a number of
+                  <a href="http://blog.brentjanderson.com/tagged/article" target="_blank">articles
+                  and essays</a> online.</p>
+                  <p><a class="btn btn-success" href="#contact"><img src="/img/envelope-white.png" alt="Envelope"/> Contact Me</a>
+                  and let's meet!</p>
+
+              </div>
+          </div>
+
+          <hr/>
+
+          <div class="row-fluid" id="portfolio">
+              <h1>Portfolio</h1>
+              <p><em>Click any of the images for more information</em></p>
+              <div class="row-fluid">
+                  <div class="span4">
+                      <h5>Infinite Development Group</h5>
+                      <a href="http://www.infinitedev.com/" target="_blank"><img class="img-polaroid" src="/img/portfolio/infinitedev.jpg"/></a>
+                      <p>We quickly build rich, scalable, interactive web applications for a variety of industries and applications.</p>
+                  </div>
+                  <div class="span4">
+                      <h5>Non-Profit</h5>
+                      <a href="http://www.spacecamputah.org/" target="_blank"><img class="img-polaroid" src="/img/portfolio/cmsec.jpg"/></a>
+                      <p>I organized a non-profit student organization that teaches
+                       computer programming to K-12 students and provides STEM education opportunities.</p>
+                  </div>
+                  <div class="span4">
+                      <h5>Juicy Development</h5>
+                      <a href="#" target="_blank"><img class="img-polaroid" src="/img/portfolio/jdev.jpg"/></a>
+                      <p>I founded a mobile app development shop. Since launch in 2008, we have published over a dozen apps on iTunes and Google Play, ranking in the top 10 globally and locally.</p>
+                  </div>
+              </div>
+
+              <div class="row-fluid">
+                  <div class="span4">
+                      <h5>Police Scanner</h5>
+                      <a href="#" target="_blank"><img class="img-polaroid" src="/img/portfolio/policescanner.jpg"/></a>
+                      <p>I developed the world's first Police Scanner for a smartphone with our great staff at Juicy Development.</p>
+                  </div>
+                  <div class="span4">
+                      <h5>Conference App</h5>
+                      <a href="#" target="_blank"><img class="img-polaroid" src="/img/portfolio/liveconference.png"/></a>
+                      <p>I built a live-streaming LDS Conference app in one week, including newsletter and push-notification backends.</p>
+                  </div>
+                  <div class="span4">
+                      <h5>Patriot Pursuit</h5>
+                      <a href="#" target="_blank"><img class="img-polaroid" src="/img/portfolio/patriot.jpg"/></a>
+                      <p>I developed an app that quizzes about US History and the US Constitution.</p>
+                  </div>
+              </div>
+
+              <div class="row-fluid">
+                  <div class="span4">
+                      <h5>BlenderBottle Contest</h5>
+                      <a href="#" target="_blank"><img class="img-polaroid" src="/img/portfolio/bb-contest.png"/></a>
+                      <p>I developed backend infrastructure for a very successful Facebook marketing campaign that brought in thousands of entries.</p>
+                  </div>
+                  <div class="span4">
+                      <h5>Software Engineering</h5>
+                      <a href="https://www.github.com/brentjanderson" target="_blank"><img class="img-polaroid" src="/img/portfolio/code.jpg"/></a>
+                      <p>I am well versed in Objective-C, iOS, Cocoa, HTML5, CSS3, Javascript, Databases, JQuery, PHP, NodeJS, Meteor, and more. I do websites, apps, custom business software, and consultations.</p>
+                  </div>
+                  <div class="span4">
+                      <h5>Build For Growth</h5>
+                      <a href="https://www.github.com/brentjanderson" target="_blank"><img class="img-polaroid" src="/img/portfolio/amazon.png"/></a>
+                      <p>I have experience deploying elastically scalable applications to Amazon Web Services and other public and private cloud infrastructure.</p>
+                  </div>
+              </div>
+
+              <div class="row-fluid">
+              <div class="span2 hidden-phone"></div>
+                  <div class="span4">
+                      <h5>Sterling Scholar</h5>
+                      <a href="http://www.deseretnews.com/article/695263646/2008-Sterling-Scholar-winners.html?pg=all" target="_blank"><img class="img-polaroid" src="/img/portfolio/sterlingscholar.jpg"/></a>
+                      <p>I won the 2008 Sterling Scholar award in Business and Marketing for the state of Utah.</p>
+                  </div>
+                  <div class="span4">
+                      <h5>My faith</h5>
+                      <a href="http://mormon.org/me/1596/" target="_blank"><img class="img-polaroid" src="/img/portfolio/faith.jpg"/></a>
+                      <p>I served a 2 year LDS Mission to the Czech Republic and strive to live my faith and continue to <em>Mluvít Česky</em>.</p>
+                  </div>
+              </div>
+          </div>
+
+          <hr/>
+
+          <div class="row-fluid" id="contact">
+              <div class="span12">
+                  <h1>Contact Me</h1>
+                  <p>I'm happy to chat and network with most anyone - below are some details on common requests</p>
+                  <p>My PGP Key ID is <a href="http://pgp.mit.edu:11371/pks/lookup?op=vindex&search=0x17EB15C0C056E7BF">C056E7BF</a> and I'm on <a href="https://keybase.io/bja" target="_blank">Keybase</a>.</p>
+              </div>
+              <div class="span12">
+                  <p style="text-align: center;"><a class="btn btn-large btn-success" href="mailto:me@brentjanderson.com?subject=Howdy!"><img src="/img/envelope-white.png" alt="Envelope"/> Email Brent</a></p>
+              </div>
+              <div class="row-fluid">
+                  <div class="span4">
+                      <h3><img src="/img/chart.png" alt="Consulting"/> Consulting</h3>
+                      <p>My availability for consulting and freelance varies from month to month based on existing engagements.</p><p>See <a href="#portfolio">My Portfolio</a> for samples of my work and skillset. <a href="mailto:me@brentjanderson.com?subject=Consulting">Contact me</a> for my current availability, rates, and details.</p>
+                  </div>
+                  <div class="span4">
+                      <h3><img src="/img/lunch.png" alt="Lunch"/> Just Lunch</h3>
+                      <p>I'd love to find out what you're working on, what you're up to, and swap tips or stories.</p>
+                      <p>As long as lunch is involved, I'm more than happy to provide tips, advice, and to answer questions.</p>
+                  </div>
+                  <div class="span4">
+                      <h3><img src="/img/envelope.png" alt="eMail"/> Etc.</h3>
+                      <p>Something not covered here? Feel free to shoot me an email and we'll chat. I teach classes, give talks on various business and IT topics, and am otherwise available for most requests.</p>
+                  </div>
+              </div>
+
+          </div>
+        </div>
+        <div class="container">
+            <hr/>
+            <footer>
+                <small>Copyright &copy; 2016 Brent Anderson - All Rights Reserved Worldwide</small>
+            </footer>
+        </div>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('/js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+
+        <script src="/js/vendor/bootstrap.min.js"></script>
+        <script src="/js/main.js"></script>
+    </body>
+</html>
