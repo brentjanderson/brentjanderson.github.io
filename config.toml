@@ -1,0 +1,7 @@
+baseURL = "https://www.brentjanderson.com/"
+languageCode = "en-us"
+title = "Brent Anderson"
+theme = "academic"
+gravatar = true
+
+[[params.social]]
