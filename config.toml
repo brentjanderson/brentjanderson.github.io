@@ -1,7 +1,103 @@
-baseURL = "https://www.brentjanderson.com/"
-languageCode = "en-us"
+# Site settings
+baseURL = "https://brentjanderson.com/"
+languageCode = "en-US"
 title = "Brent Anderson"
-theme = "academic"
-gravatar = true
+theme = "hugo-split-theme"
+disableKinds = ["page", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT"]
 
-[[params.social]]
+# Enter your tracking code to enable Google Analytics
+googleAnalytics = ""
+
+[params]
+
+  # Metadata for search engines and social sharing
+  name = "Brent Anderson"
+  description = "Split is a centrally-divided layout for a professional online presence with a big image or video left with alongside content."
+  shareImage = "images/social.jpg"
+  twitterHandle = "brentjanderson"
+
+  # Favicon
+  favicon = "favicon.ico"
+
+  # Copyright
+  copyright = "&copy; 2018 Brent Anderson"
+
+  # Section - Content
+  [params.content]
+    name = "Brent Anderson"
+    tagline = "Full Stack Engineer. Entrepreneur."
+    bio = "I build scalable, business-ready mobile and web applications. I have created valuable solutions for a variety of clients, published apps in the top 10 on the App Store, and deliver results in weeks, not months."
+
+  # Section - Visual
+  [params.visual]
+
+    # Image
+    [params.visual.image]
+      enable = true
+      file = "img/head_primary.jpg"
+      position = "center center"
+
+    # Video
+    [params.visual.video]
+      enable = false
+      mute = true
+      file = "videos/background.mp4"
+      # youtubeId = "dk9uNWPP7EA"
+
+  # Links
+  #
+  # Links List #1
+  [[params.links]]
+    [params.links.list1]
+      heading = "Connect"
+
+      [[params.links.list1.link]]
+        text = "Blog"
+        url = "#"
+
+      [[params.links.list1.link]]
+        text = "Email"
+        url = "#"
+
+      [[params.links.list1.link]]
+        text = "Newsletter"
+        url = "#"
+
+  # Links List #2
+  [[params.links]]
+    [params.links.list2]
+      heading = "Social"
+
+      [[params.links.list2.link]]
+        text = "Twitter"
+        url = "https://twitter.com/brentjanderson"
+
+      [[params.links.list2.link]]
+        text = "Keybase"
+        url = "https://keybase.io/bja"
+
+      [[params.links.list2.link]]
+        text = "Dribbble"
+        url = "#"
+
+  # Links List #3
+  [[params.links]]
+    [params.links.list3]
+      heading = "Network"
+
+      [[params.links.list3.link]]
+        text = "Link One"
+        url = "#"
+
+      [[params.links.list3.link]]
+        text = "Link Two"
+        url = "#"
+
+      [[params.links.list3.link]]
+        text = "Link Three"
+        url = "#"
+
+  # The original template is released under the Creative Commons Attribution 3.0 License.
+  # Please keep the original attribution link when using for your own project.
+  # If you'd like to use the template without the attribution, you can check out
+  # the license option via the template author's website: https://onepagelove.com/split
