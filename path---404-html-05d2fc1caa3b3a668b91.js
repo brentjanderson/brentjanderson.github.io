@@ -1,2 +1,0 @@
-webpackJsonp([0xa2868bfb69fc],{377:function(e,t){e.exports={data:{site:{siteMetadata:{title:"Blog by Brent Anderson",subtitle:"Entrepreneur and Software Engineer",copyright:"© All rights reserved.",menu:[{label:"Articles",path:"/"},{label:"About me",path:"/about/"},{label:"Contact me",path:"/contact/"}],author:{name:"Brent Anderson",email:"me@brentjanderson.com",twitter:"brentjanderson",github:"brentjanderson",rss:"#"}}}},pathContext:{}}}});
-//# sourceMappingURL=path---404-html-05d2fc1caa3b3a668b91.js.map
