@@ -1,163 +1,161 @@
 const _ = require('lodash');
-const path = require('path');
 const Promise = require('bluebird');
+const path = require('path');
+const lost = require('lost');
+const pxtorem = require('postcss-pxtorem');
+const slash = require('slash');
 
-const { createFilePath } = require(`gatsby-source-filesystem`);
-
-const SLUG_SEPARATOR = '___';
-
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions;
-  if (node.internal.type === `MarkdownRemark`) {
-    const fileNode = getNode(node.parent);
-    const filePath = createFilePath({ node, getNode });
-
-    const source = fileNode.sourceInstanceName;
-
-    const separatorExists = ~filePath.indexOf(SLUG_SEPARATOR);
-
-    let slug;
-    let prefix;
-
-    if (separatorExists) {
-      const separatorPosition = filePath.indexOf(SLUG_SEPARATOR);
-      const slugBeginning = separatorPosition + SLUG_SEPARATOR.length;
-      slug =
-        separatorPosition === 1
-          ? null
-          : `/${filePath.substring(slugBeginning)}`;
-      prefix = filePath.substring(1, separatorPosition);
-    } else {
-      slug = filePath;
-      prefix = '';
-    }
-
-    if (source !== 'parts') {
-      createNodeField({
-        node,
-        name: `slug`,
-        value: slug,
-      });
-    }
-    createNodeField({
-      node,
-      name: `prefix`,
-      value: prefix,
-    });
-    createNodeField({
-      node,
-      name: `source`,
-      value: source,
-    });
-  }
-};
-
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
+exports.createPages = ({ graphql, boundActionCreators }) => {
+  const { createPage } = boundActionCreators;
 
   return new Promise((resolve, reject) => {
-    const postTemplate = path.resolve('./src/templates/PostTemplate.js');
-    const pageTemplate = path.resolve('./src/templates/PageTemplate.js');
-    const categoryTemplate = path.resolve(
-      './src/templates/CategoryTemplate.js'
-    );
+    const postTemplate = path.resolve('./src/templates/post-template.jsx');
+    const pageTemplate = path.resolve('./src/templates/page-template.jsx');
+    const tagTemplate = path.resolve('./src/templates/tag-template.jsx');
+    const categoryTemplate = path.resolve('./src/templates/category-template.jsx');
 
-    resolve(
-      graphql(`
-        {
-          allMarkdownRemark(
-            filter: { fields: { slug: { ne: null } } }
-            sort: { fields: [fields___prefix], order: DESC }
-            limit: 1000
-          ) {
-            edges {
-              node {
-                fileAbsolutePath
-                fields {
-                  slug
-                  prefix
-                  source
-                }
-                frontmatter {
-                  title
-                  categories
-                }
-              }
+    graphql(`
+    {
+      allMarkdownRemark(
+        limit: 1000,
+        filter: { frontmatter: { draft: { ne: true } } },
+      ) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              tags
+              layout
+              category
             }
           }
         }
-      `).then(result => {
-        if (result.errors) {
-          console.log(result.errors);
-          reject(result.errors);
-        }
+      }
+    }
+  `).then((result) => {
+      if (result.errors) {
+        console.log(result.errors);
+        reject(result.errors);
+      }
 
-        const items = result.data.allMarkdownRemark.edges;
+      _.each(result.data.allMarkdownRemark.edges, (edge) => {
+        if (_.get(edge, 'node.frontmatter.layout') === 'page') {
+          createPage({
+            path: edge.node.fields.slug,
+            component: slash(pageTemplate),
+            context: { slug: edge.node.fields.slug }
+          });
+        } else if (_.get(edge, 'node.frontmatter.layout') === 'post') {
+          createPage({
+            path: edge.node.fields.slug,
+            component: slash(postTemplate),
+            context: { slug: edge.node.fields.slug }
+          });
 
-        const categorySet = new Set();
-
-        // Create category list
-        items.forEach(edge => {
-          const {
-            node: {
-              frontmatter: { categories },
-            },
-          } = edge;
-
-          if (categories) {
-            categories.forEach(category => {
-              categorySet.add(category);
-            });
+          let tags = [];
+          if (_.get(edge, 'node.frontmatter.tags')) {
+            tags = tags.concat(edge.node.frontmatter.tags);
           }
-        });
 
-        // Create category pages
-        const categoryList = Array.from(categorySet);
-        categoryList.forEach(category => {
-          createPage({
-            path: `/categories/${_.kebabCase(category)}/`,
-            component: categoryTemplate,
-            context: {
-              category,
-            },
+          tags = _.uniq(tags);
+          _.each(tags, (tag) => {
+            const tagPath = `/tags/${_.kebabCase(tag)}/`;
+            createPage({
+              path: tagPath,
+              component: tagTemplate,
+              context: { tag }
+            });
           });
-        });
 
-        // Create posts
-        const posts = items.filter(item => item.node.fields.source === 'posts');
-        posts.forEach(({ node }, index) => {
-          const slug = node.fields.slug;
-          const next = index === 0 ? undefined : posts[index - 1].node;
-          const prev =
-            index === posts.length - 1 ? undefined : posts[index + 1].node;
+          let categories = [];
+          if (_.get(edge, 'node.frontmatter.category')) {
+            categories = categories.concat(edge.node.frontmatter.category);
+          }
 
-          createPage({
-            path: slug,
-            component: postTemplate,
-            context: {
-              slug,
-              prev,
-              next,
-            },
+          categories = _.uniq(categories);
+          _.each(categories, (category) => {
+            const categoryPath = `/categories/${_.kebabCase(category)}/`;
+            createPage({
+              path: categoryPath,
+              component: categoryTemplate,
+              context: { category }
+            });
           });
-        });
+        }
+      });
 
-        // create pages
-        const pages = items.filter(item => item.node.fields.source === 'pages');
-        pages.forEach(({ node }) => {
-          const slug = node.fields.slug;
-          const source = node.fields.source;
+      resolve();
+    });
+  });
+};
 
-          createPage({
-            path: slug,
-            component: pageTemplate,
-            context: {
-              slug,
-              source,
-            },
-          });
-        });
+exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
+  const { createNodeField } = boundActionCreators;
+
+  if (node.internal.type === 'File') {
+    const parsedFilePath = path.parse(node.absolutePath);
+    const slug = `/${parsedFilePath.dir.split('---')[1]}/`;
+    createNodeField({ node, name: 'slug', value: slug });
+  } else if (
+    node.internal.type === 'MarkdownRemark' &&
+    typeof node.slug === 'undefined'
+  ) {
+    const fileNode = getNode(node.parent);
+    let slug = fileNode.fields.slug;
+    if (typeof node.frontmatter.path !== 'undefined') {
+      slug = node.frontmatter.path;
+    }
+    createNodeField({
+      node,
+      name: 'slug',
+      value: slug
+    });
+
+    if (node.frontmatter.tags) {
+      const tagSlugs = node.frontmatter.tags.map(tag => `/tags/${_.kebabCase(tag)}/`);
+      createNodeField({ node, name: 'tagSlugs', value: tagSlugs });
+    }
+
+    if (typeof node.frontmatter.category !== 'undefined') {
+      const categorySlug = `/categories/${_.kebabCase(node.frontmatter.category)}/`;
+      createNodeField({ node, name: 'categorySlug', value: categorySlug });
+    }
+  }
+};
+
+exports.modifyWebpackConfig = ({ config }) => {
+  config.merge({
+    postcss: [
+      lost(),
+      pxtorem({
+        rootValue: 16,
+        unitPrecision: 5,
+        propList: [
+          'font',
+          'font-size',
+          'line-height',
+          'letter-spacing',
+          'margin',
+          'margin-top',
+          'margin-left',
+          'margin-bottom',
+          'margin-right',
+          'padding',
+          'padding-top',
+          'padding-left',
+          'padding-bottom',
+          'padding-right',
+          'border-radius',
+          'width',
+          'max-width'
+        ],
+        selectorBlackList: [],
+        replace: true,
+        mediaQuery: false,
+        minPixelValue: 0
       })
-    );
+    ]
   });
 };
