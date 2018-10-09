@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 const IndexPage = () => (
   <Layout>
-    <Container fluid style={{ marginTop: '2rem' }}>
+    <Container fluid>
       <Row>
         <Col>
           <h1>Contact Page</h1>

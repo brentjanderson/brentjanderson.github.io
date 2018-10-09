@@ -16,7 +16,7 @@ const IndexPage = ({
 
   return (
     <Layout>
-      <Container fluid style={{ marginTop: '2rem' }}>
+      <Container fluid>
         <Row>
           <Col>
             <div>{Posts}</div>
