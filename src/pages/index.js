@@ -4,11 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Layout from '../components/layout'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import '../components/layout.css'
+import '../css/home.css'
+
+const size = '5rem'
 
 const IndexPage = () => (
   <Layout>
-    <Container fluid>
+    <Container>
       <Row>
         <Col>
           <h1 className={'display-2 text-center'}>Brent J. Anderson</h1>
@@ -28,36 +30,40 @@ const IndexPage = () => (
               <li>
                 <a href="https://github.com/brentjanderson">
                   <FontAwesomeIcon
-                    style={{ width: '120px', height: '120px' }}
+                    style={{ width: size, height: size }}
                     icon="code-branch"
                   />
+                  <br />
                   Github
                 </a>
               </li>
               <li>
                 <a href="http://buttondown.email/bja">
                   <FontAwesomeIcon
-                    style={{ width: '120px', height: '120px' }}
+                    style={{ width: size, height: size }}
                     icon="envelope-open"
                   />
+                  <br />
                   Newsletter
                 </a>
               </li>
               <li>
                 <a href="/blog">
                   <FontAwesomeIcon
-                    style={{ width: '120px', height: '120px' }}
+                    style={{ width: size, height: size }}
                     icon="book-reader"
                   />
+                  <br />
                   Blog
                 </a>
               </li>
               <li>
                 <a href="https://github.com/brentjanderson/ama">
                   <FontAwesomeIcon
-                    style={{ width: '120px', height: '120px' }}
+                    style={{ width: size, height: size }}
                     icon="hand-paper"
                   />
+                  <br />
                   AMA
                 </a>
               </li>
