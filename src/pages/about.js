@@ -9,9 +9,13 @@ const IndexPage = () => (
     <Container>
       <Row>
         <Col md="3">
-          <img style={{ width: '100%' }} src={brent} alt="Brent Anderson" />
+          <img
+            style={{ width: '100%', marginBottom: '1rem' }}
+            src={brent}
+            alt="Brent Anderson"
+          />
         </Col>
-        <Col xs="9">
+        <Col md="9">
           <p className="lead text-center">
             <span role="img" aria-label="Waving hand">
               👋
@@ -76,7 +80,7 @@ const IndexPage = () => (
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Powered by Buttondown.
+                Powered by Buttondown
               </a>
             </p>
           </form>
