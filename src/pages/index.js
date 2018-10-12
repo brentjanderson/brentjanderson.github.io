@@ -3,7 +3,7 @@ import { Container, Row, Col } from 'reactstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Layout from '../components/layout'
-import 'bootstrap/dist/css/bootstrap.min.css'
+
 import '../css/home.css'
 
 const size = '5rem'

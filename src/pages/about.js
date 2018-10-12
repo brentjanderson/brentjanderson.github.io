@@ -4,8 +4,6 @@ import { Container, Row, Col } from 'reactstrap'
 import Layout from '../components/layout'
 import brent from '../images/brent.png'
 
-import 'bootstrap/dist/css/bootstrap.min.css'
-
 const IndexPage = () => (
   <Layout>
     <Container>

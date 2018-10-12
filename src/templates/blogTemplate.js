@@ -11,7 +11,7 @@ export default function Template({
   const { frontmatter, html } = markdownRemark
   return (
     <Layout>
-      <Container fluid style={{ marginTop: '2rem' }}>
+      <Container style={{ marginTop: '2rem' }}>
         <Row>
           <Col>
             {' '}
