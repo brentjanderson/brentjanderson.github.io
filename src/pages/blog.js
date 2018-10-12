@@ -16,7 +16,7 @@ const IndexPage = ({
 
   return (
     <Layout>
-      <Container fluid>
+      <Container>
         <Row>
           <Col>
             <div>{Posts}</div>
@@ -35,10 +35,12 @@ export const pageQuery = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
           excerpt(pruneLength: 250)
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
-            path
             title
           }
         }

@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 
 const IndexPage = () => (
   <Layout>
-    <Container fluid>
+    <Container>
       <Row>
         <Col>
           <h1>Contact Page</h1>
