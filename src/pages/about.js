@@ -25,9 +25,10 @@ const IndexPage = () => (
           </p>
 
           <p>
-            As an entrepreneur, I use Lean Startup techniques to quickly get to
-            the root of the job to be done so that we can get value to customers
-            as quickly as possible.
+            As an entrepreneur, I use{' '}
+            <a href="https://www.theleanstartup.com">Lean Startup</a> techniques
+            to quickly get to the root of the job to be done so that we can get
+            value to customers as quickly as possible.
           </p>
 
           <p>
@@ -45,8 +46,8 @@ const IndexPage = () => (
             <li>Help others become more excellent</li>
           </ol>
           <p>
-            I have worked directly with or contracted for tiny, early stage
-            startups, fortune 100 companies, and global brands.
+            I have helped tiny, early stage startups, fortune 100 companies, and
+            global brands.
           </p>
 
           <p>
@@ -54,13 +55,14 @@ const IndexPage = () => (
             <a href="https://yours.co">Yours.co</a>. By night, I'm a dad,
             husband, <a href="https://lds.org">Latter-day Saint</a>, and
             co-founder at <a href="https://coriaria.com">Coriaria</a> where we
-            test products and ideas that strengthen homes and families.
+            develop products and services that strengthen homes and families.
           </p>
 
           <p>
-            I blog weekly about topics in entreprenuership, business, and
-            technology. You can check back here, or sign up for my newsletter
-            below. No spam, unsubscribe at any time.
+            I blog about topics in entreprenuership, business, and technology.
+            You can check back here, <a href="/rss.xml">subscribe via RSS</a>,
+            or sign up for my newsletter below. No spam, unsubscribe at any
+            time.
           </p>
 
           <form
