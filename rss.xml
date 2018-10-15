@@ -1,4 +1,104 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brent Anderson]]></title><description><![CDATA[Brent Anderson's musings]]></description><link>https://www.brentjanderson.com</link><generator>RSS for Node</generator><lastBuildDate>Fri, 12 Oct 2018 18:53:50 GMT</lastBuildDate><item><title><![CDATA[Event Sourcing for Beginners]]></title><description><![CDATA[Note: This article is still a draft, hence the blank sections at the bottom. Thanks for stopping by either way! I am fascinated by pushing…]]></description><link>https://www.brentjanderson.com/blog/2018-10-08-event-sourcing/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2018-10-08-event-sourcing/</guid><pubDate>Fri, 12 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brent Anderson]]></title><description><![CDATA[Brent Anderson's musings]]></description><link>https://www.brentjanderson.com</link><generator>RSS for Node</generator><lastBuildDate>Mon, 15 Oct 2018 21:12:41 GMT</lastBuildDate><item><title><![CDATA[The problem with Firebase]]></title><description><![CDATA[We use  Firebase  at  Yours.co  for our entire backend. Our app depends upon cloud functions, datastore, push notifications and more…]]></description><link>https://www.brentjanderson.com/blog/2018-10-15-firebase-problem/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2018-10-15-firebase-problem/</guid><pubDate>Mon, 15 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;
+  &lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block;  max-width: 1100px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAgP/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAZ7MnY0cCb//xAAaEAEAAgMBAAAAAAAAAAAAAAABAAIDERMi/9oACAEBAAEFAjIQ9CaZW9qzqs//xAAYEQACAwAAAAAAAAAAAAAAAAAAAREhQf/aAAgBAwEBPwFRpR//xAAYEQACAwAAAAAAAAAAAAAAAAAAAQIhQf/aAAgBAgEBPwFuWFn/xAAXEAEBAQEAAAAAAAAAAAAAAAAAIQEQ/9oACAEBAAY/Ak7NV//EABcQAQEBAQAAAAAAAAAAAAAAAAEAETH/2gAIAQEAAT8hz8YO4cZ3GJHWJVuFv//aAAwDAQACAAMAAAAQ3A//xAAXEQEBAQEAAAAAAAAAAAAAAAABACER/9oACAEDAQE/ECXEveX/xAAXEQADAQAAAAAAAAAAAAAAAAAAASER/9oACAECAQE/EMVCmn//xAAcEAACAgIDAAAAAAAAAAAAAAABEQAhMUFRYZH/2gAIAQEAAT8QXku2KqBWkCo8JiHUYO9GvIpPLxP/2Q==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;fire.jpg&quot;
+        title=&quot;Photo by https://unsplash.com/photos/HCCJgI4YwbQ&quot;
+        src=&quot;/static/fire-2047286e866179e69fc2e847d584d29f-80a2a.jpg&quot;
+        srcset=&quot;/static/fire-2047286e866179e69fc2e847d584d29f-49da2.jpg 275w,
+/static/fire-2047286e866179e69fc2e847d584d29f-8cc5e.jpg 550w,
+/static/fire-2047286e866179e69fc2e847d584d29f-80a2a.jpg 1100w,
+/static/fire-2047286e866179e69fc2e847d584d29f-d6076.jpg 1650w,
+/static/fire-2047286e866179e69fc2e847d584d29f-25733.jpg 2200w,
+/static/fire-2047286e866179e69fc2e847d584d29f-7c033.jpg 3000w&quot;
+        sizes=&quot;(max-width: 1100px) 100vw, 1100px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Photo by https://unsplash.com/photos/HCCJgI4YwbQ&lt;/figcaption&gt;
+  &lt;/figure&gt;
+      &lt;/p&gt;
+&lt;p&gt;We use &lt;a href=&quot;https://www.firebase.com&quot;&gt;Firebase&lt;/a&gt; at &lt;a href=&quot;https://yours.co&quot;&gt;Yours.co&lt;/a&gt; for our entire backend. Our app depends upon cloud functions, datastore, push notifications and more.&lt;/p&gt;
+&lt;p&gt;Firebase is well-suited to certain types of real-time applications. But, sometimes people ask me &quot;Should I use Firebase?&quot; Here are my open thoughts on Firebase&apos;s products and how they fit into a product&apos;s strategy.&lt;/p&gt;
+&lt;h2&gt;A few caveats&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://yours.co&quot;&gt;Our use case&lt;/a&gt; is not your use case. Firebase can be well-suited to other applications.&lt;/li&gt;
+&lt;li&gt;We don&apos;t use Firebase Cloud Firestore. It might be a lot better than their original Cloud Datastore product.&lt;/li&gt;
+&lt;li&gt;Firebase is always getting better. Check &lt;a href=&quot;https://www.firebase.com&quot;&gt;Firebase&lt;/a&gt; to decide if it&apos;s a good fit for your needs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Firebase: The Good Parts&lt;/h2&gt;
+&lt;p&gt;Firebase is excellent for getting a product prototype or MVP off the ground. They take care of running your back end, and provide &lt;a href=&quot;https://firebase.google.com/products/&quot;&gt;a suite of good services&lt;/a&gt; for advanced features. They offer real-time syncing with your app, push notifications, and more. If you invest in the Firebase ecosystem, you can get up and running fast with very little overhead. You don&apos;t have to worry about managing servers and infrastructure. You also get Google&apos;s security and infrastructure teams supporting your product.&lt;/p&gt;
+&lt;p&gt;Firebase also has a huge user community to bounce ideas off of and get guidance on best practices. Having an ecosystem around your technology decisions may help you move faster. Others may have already had the same problem and shared their solution to it with the world.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;This might be good enough for many products, and these are great tools to use when you need them.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;Firebase: The problem&lt;/h2&gt;
+&lt;p&gt;Unfortunately, many applications suffer from significant real-world constraints:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Firebase&apos;s most advanced features introduce tight coupling between your app and database&lt;/li&gt;
+&lt;li&gt;Firebase can make it hard to evolve your product.&lt;/li&gt;
+&lt;li&gt;Firebase makes it hard to be backwards compatible&lt;/li&gt;
+&lt;li&gt;Datastore makes updating complex data structures harder than alternatives like relational databases&lt;/li&gt;
+&lt;li&gt;Firebase introduces significant lock-in with each component. This is a double-edged sword.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These are the top points I would urge potential Firebase customers to consider.&lt;/p&gt;
+&lt;p&gt;No technology is perfect. &lt;em&gt;Firebase might be the best solution to your specific situation&lt;/em&gt;. Weigh your project&apos;s constraints against technology options. What can your team get done? What do you think you need to get done in the future?&lt;/p&gt;
+&lt;h2&gt;Tight Coupling&lt;/h2&gt;
+&lt;p&gt;Tight coupling is the biggest issue. It is the root of most of the problems listed above. Tight coupling means that a change to one part of an application triggers changes in other parts. A good example of this in the physical world would be a car with wheels welded to the axle. You couldn&apos;t change a tire without replacing the axles.&lt;/p&gt;
+&lt;p&gt;Early technical decisions have huge impacts in the long-term path of the product. It&apos;s important to &lt;strong&gt;keep your options open&lt;/strong&gt; and recognize that &lt;strong&gt;things will change&lt;/strong&gt; over time. Startups suffer from this problem more than established products. &lt;strong&gt;The need for future agility is proportional to future product uncertainty.&lt;/strong&gt; To &lt;a href=&quot;https://blog.ycombinator.com/tips-ship-early-and-often/&quot;&gt;ship early and ship often&lt;/a&gt;, you must think about enabling future growth.&lt;/p&gt;
+&lt;p&gt;Firebase encourages tight coupling. It encourages meshing your app&apos;s user interface with the database. Thus, you must consider user interface or schema changes together. Is it okay to update the user interface and backend at the same time? What if you maintain older versions? Tight coupling makes for poor backwards compatibility.&lt;/p&gt;
+&lt;p&gt;Mobile apps tend to need backwards compatibility. If you expose an API for customers to consume, you definitely need to be backwards compatible. The apps at &lt;a href=&quot;https://yours.co&quot;&gt;Yours.co&lt;/a&gt; check their version with the latest supported version in Firebase. If you are no longer supported, the app locks up until the user updates to the latest version. For some use-cases this may be sub-optimal.&lt;/p&gt;
+&lt;p&gt;Unless backwards compatibility does not matter, keep your app loosely coupled. Firebase makes this particular constraint very hard, if not impossible, to handle.&lt;/p&gt;
+&lt;p&gt;This does not matter as much if you only ship a web application that is evergreen with your backend.&lt;/p&gt;
+&lt;h2&gt;Updating complex data structures&lt;/h2&gt;
+&lt;p&gt;Firebase datastore is a document database with a single document in it.&lt;a name=&quot;sup1&quot; href=&quot;#footnote1&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/a&gt; Document databases are great at handling unstructured data at massive scale for analytics. If you don&apos;t know the shape of your data in advance, document databases can be a terrific solution.&lt;/p&gt;
+&lt;p&gt;Most applications rely on known data with known fields. We know that users will sign up with an email address. Users have connections with other users. Tweets are 280 characters long. When using a schemaless database like Firebase, your app must handle your schema. You are responsible for managing data integrity, not your database. This generally means that document databases are a weaker fit for many applications.&lt;/p&gt;
+&lt;p&gt;Document databases fail to model relationships between entities. Relational databases have decades of optimizations for joining and filtering data and relationships. With a document database, it is up to the engineer to build poor replacements for joins and filters in your app. Let&apos;s suppose we used a document database to model Twitter or Mastodon. A user produces tweets, and users can see a stream of tweets from their followers.&lt;/p&gt;
+&lt;p&gt;A relational database would have a table of tweets, a table of users, and a table of who follows whom. We model the relationships between entities with foreign keys. Although this has drawbacks at massive scale, for most apps it&apos;s a great start.&lt;/p&gt;
+&lt;p&gt;A document database like Firebase could have a subkey for users and a subkey for tweets. This would give you all the tweets for all users. But, you would need to query every user to pull up usernames and profile pictures to go with each tweet. You could stuff user tweets inside each user, but you would need to query every user to make a global timeline. The compromise is to then copy every tweet into both places. But now you have two problems when you go to edit/update content.&lt;/p&gt;
+&lt;p&gt;At Yours.co, keep collections of data separate and link them with references. We have a &lt;code&gt;users&lt;/code&gt; collection that describes information about each user generally. We sprinkle little bits of user data throughout the application. This makes reading easier for the app at the expense of complex writes. &lt;a href=&quot;https://en.wikipedia.org/wiki/Relational_database&quot;&gt;Relational databases&lt;/a&gt; like Postgres or MariaDB are excellent at these common workloads. By contrast, document databases leave this work up to you and your application. This is more work for you, slower, and more error prone.&lt;/p&gt;
+&lt;p&gt;This also makes it harder to keep data in sync. If I copy data like an email address in a few places, when the user updates their email I have to remember what to update. This does not scale well, especially as a team evolves and develops a product. Data governance problems become more complex under a document-oriented model.&lt;/p&gt;
+&lt;h2&gt;Real-time is overpromised&lt;/h2&gt;
+&lt;p&gt;Firebase&apos;s killer feature is realtime data. It feels like magic to edit something on the client side and see it update in real time in a different part of the app. Firebase makes this possible, for free, out of the box. But, if you face any of the above constraints, you may not get the real-time features you expect. Firebase&apos;s real-time features only work if you mesh your UI with the data model. If you want to use an API in front of Firebase, you have to re-implement your own realtime features in some other way. Firebase&apos;s realtime features are also data-oriented rather than application-level events. Instead of reacting to &quot;A user registered&quot; you would see &quot;Inserted an object in /users&quot;.&lt;/p&gt;
+&lt;h2&gt;Lock-in&lt;/h2&gt;
+&lt;p&gt;Firebase offers a suite of tools from database to A/B testing and more. The entire suite is impressive, and we use several components at Yours.co to make our app work. Despite the above complaints, &lt;strong&gt;Firebase may be a good fit for some projects&lt;/strong&gt;. That said, Firebase is a business built around getting you linked to a community of products. If you buy into authentication, you will want to use firestore or datastore. When you need to store uploaded user files, Firebase Storage is a convenient option. A/B testing, crash reporting, push notifications, and more are also a few clicks away.&lt;/p&gt;
+&lt;p&gt;This convenience is not a bad thing. This is why Firebase can be a great tool for the right product. Before you commit to part of firebase, are okay with the rest of the products in the Firebase ecosystem? Is the lock-in worth not writing it yourself? Weighing such trade offs is the essence of good software engineering and architecture.&lt;/p&gt;
+&lt;h2&gt;When to use Firebase&lt;/h2&gt;
+&lt;p&gt;I would recommend Firebase to new, greenfield projects that:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Know what they need to achieve a good MVP out of the gate&lt;/li&gt;
+&lt;li&gt;Don&apos;t want to fiddle with infrastructure concerns&lt;/li&gt;
+&lt;li&gt;Are web-based only/Don&apos;t need backwards compatibility&lt;/li&gt;
+&lt;li&gt;Have a small-ish team&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;What I recommend instead of Firebase&lt;/h2&gt;
+&lt;p&gt;I recommend the technology a team is most comfortable with. I recommend the following for the good parts of Firebase without using Firebase.&lt;/p&gt;
+&lt;h3&gt;Elixir + Phoenix&lt;/h3&gt;
+&lt;p&gt;Elixir and Phoenix offer an incredible &lt;a href=&quot;https://phoenixframework.org/blog/the-road-to-2-million-websocket-connections&quot;&gt;concurrency and scaling&lt;/a&gt; story. It enables real-time websockets in a way that is scalable and performant. It provides a rock-solid foundation for building your own apps. You can also &lt;a href=&quot;https://hexdocs.pm/phoenix/heroku.html#content&quot;&gt;run it on Heroku&lt;/a&gt; if you don&apos;t want to run your own infrastructure.&lt;/p&gt;
+&lt;h3&gt;Postgres&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.postgresql.org/&quot;&gt;Postgres&lt;/a&gt; is a rock solid relational database that is fast, efficient, and supports many modern features. It can store JSON if you want the flexibility of a document database. It does geographic calculations if that&apos;s your need. It supports everything from relational databases. It can even do &lt;a href=&quot;https://blog.lelonek.me/listen-and-notify-postgresql-commands-in-elixir-187c49597851&quot;&gt;realtime events&lt;/a&gt; similar to Firebase.&lt;/p&gt;
+&lt;h3&gt;GraphQL&lt;/h3&gt;
+&lt;p&gt;GraphQL APIs are an alternative to REST APIs. They are strongly typed, self-documenting, and let you query exactly what you need. I am a fan of &lt;a href=&quot;https://absinthe-graphql.org/&quot;&gt;Absinthe GraphQL&lt;/a&gt; for the backend and &lt;a href=&quot;https://www.apollographql.com/&quot;&gt;Apollo&lt;/a&gt; on the frontend.&lt;a name=&quot;sup2&quot; href=&quot;#footnote2&quot;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/a&gt; It also supports realtime out of the box using Subscriptions.&lt;/p&gt;
+&lt;p&gt;GraphQL decouples the backend from the frontend. It can version and deprecate fields for backwards compatibility concerns. It enables tying in the best backend for the job.&lt;/p&gt;
+&lt;h3&gt;Summary&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Firebase is great for some use-cases&lt;/li&gt;
+&lt;li&gt;Try to go into it with eyes wide open&lt;/li&gt;
+&lt;li&gt;If your data is not a good fit for a document database, be careful!&lt;/li&gt;
+&lt;li&gt;Consider alternatives that will grow with you for longer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Footnotes&lt;/h2&gt;
+&lt;p&gt;&lt;a name=&quot;footnote1&quot; href=&quot;#sup1&quot;&gt;1&lt;/a&gt;: I have not used Firebase Firestore yet (it&apos;s still in beta), but it doesn&apos;t seem to include relational indices either.
+&lt;a name=&quot;footnote2&quot; href=&quot;#sup2&quot;&gt;2&lt;/a&gt;: I have tried Apollo Server. If you want cutting-edge features or are all-in on Node, it&apos;s a good option. I find Absinthe is elegant and declarative. Elixir and Phoenix handle realtime subscriptions well too.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Event Sourcing for Beginners]]></title><description><![CDATA[Note: This article is still a draft, hence the blank sections at the bottom. Thanks for stopping by either way! I am fascinated by pushing…]]></description><link>https://www.brentjanderson.com/blog/2018-10-08-event-sourcing/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2018-10-08-event-sourcing/</guid><pubDate>Fri, 12 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;
   &lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
   
   &lt;span
@@ -33,11 +133,14 @@
 &lt;p&gt;&lt;em&gt;Note: This article is still a draft, hence the blank sections at the bottom. Thanks for stopping by either way!&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;I am fascinated by pushing the boundaries of software. A few years ago, I read &lt;a href=&quot;https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying&quot;&gt;this marvelous piece about Logs&lt;/a&gt; - not messages for debugging, but using a log as a data structure. Ever since, the power of logs and capturing events has fascinated me.&lt;/p&gt;
 &lt;p&gt;Not long after that piece about real-time data and logs, I started to watch and read up on &lt;a href=&quot;https://martinfowler.com/eaaDev/EventSourcing.html&quot;&gt;Event Sourcing&lt;/a&gt;. I am not the first to write about event sourcing, CQRS, or other related topics. Rather, this article aims to be the kind of content I wished I had when I first started down this rabbit hole.&lt;/p&gt;
-&lt;h2&gt;A few terms before we dive in&lt;/h2&gt;
-&lt;p&gt;Before we define Event Sourcing, let&apos;s take a step back and define some related concepts first.&lt;/p&gt;
-&lt;p&gt;Software exists to help people get things done. People write software to capture pictures, write blogs, tweet, trade stocks, and more. As people use software, we give software information and then ask it to keep track of it for us. This information could be the picture we took or the blog post we wrote. If a computer didn&apos;t remember what we wanted it to remember, it wouldn&apos;t be particularly useful.&lt;/p&gt;
+&lt;h2&gt;State management is hard&lt;/h2&gt;
+&lt;p&gt;Before we define Event Sourcing, let&apos;s take a step back and talk about some related concepts.&lt;/p&gt;
+&lt;p&gt;Software exists to help people get things done. Most software requires that we track state on behalf of the user. We store photos, we remember what things they liked or retweeted, we record if a blog post has been published yet or not, and so on.&lt;/p&gt;
+&lt;p&gt;Most commonly, we use a database to track state. We create tables, relationships, and add data over time. Choosing a database is fraught with a lot of complex decisions (although I personally)&lt;/p&gt;
+&lt;p&gt;People write software to capture pictures, write blogs, tweet, trade stocks, and more. As people use software, we give software information and then ask it to keep track of it for us. This information could be the picture we took or the blog post we wrote. If a computer didn&apos;t remember what we wanted it to remember, it wouldn&apos;t be particularly useful.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Programmers call this stuff that we want the computer to remember &quot;state&quot;.&lt;/strong&gt; State is anything we want the computer to remember over time. A simple calculator keeps track of the numbers you want to crunch. Your photo library keeps photos and information about them, like the time you took the photo. More sophisticated systems like banking or accounting software track balances and transactions.&lt;/p&gt;
 &lt;p&gt;Although state is what makes software useful, it is also what makes software hard. &quot;Stateless&quot; software is easier to write, improve, and understand. Most bugs come from problems with managing state. Thus programmers spend lots of time learning about ways to manage and simplify state.&lt;/p&gt;
+&lt;h2&gt;A few terms before we dive in&lt;/h2&gt;
 &lt;p&gt;Most software tracks state using a database. A database provides a central place to store and retrieve state. Databases make it easier to write complex systems because they are so good at managing state. When we put something in an online shopping cart, we are adding something to the database. If we come back to that cart a few days later, the cart still has our stuff in it. That&apos;s because the database remembers it for us.&lt;/p&gt;
 &lt;p&gt;Basic database use works for many applications. Sometimes our natural approach to using databases leads to problems down the road. For instance, if we have two people editing the same document at the same time, and both hit save, what will happen? What about handling an order when a customer requests a refund, but we track the order in more than one system? How do we keep those systems in sync? What happens when a customer goes to pay for something but the payment gateway is down? How do we handle that error?&lt;/p&gt;
 &lt;p&gt;Although databases can handle these scenarios, over time we collect complexity. Well-designed software should be flexible in the fae of these and other changes.&lt;/p&gt;
