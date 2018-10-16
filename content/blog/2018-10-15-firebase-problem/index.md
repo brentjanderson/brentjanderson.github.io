@@ -83,7 +83,7 @@ Firebase's killer feature is realtime data. It feels like magic to edit somethin
 
 Firebase offers a suite of tools from database to A/B testing and more. The entire suite is impressive, and we use several components at Yours.co to make our app work. Despite the above complaints, **Firebase may be a good fit for some projects**. That said, Firebase is a business built around getting you linked to a community of products. If you buy into authentication, you will want to use firestore or datastore. When you need to store uploaded user files, Firebase Storage is a convenient option. A/B testing, crash reporting, push notifications, and more are also a few clicks away.
 
-This convenience is not a bad thing. This is why Firebase can be a great tool for the right product. Before you commit to part of firebase, are okay with the rest of the products in the Firebase ecosystem? Is the lock-in worth not writing it yourself? Weighing such trade offs is the essence of good software engineering and architecture.
+This convenience is not a bad thing. This is why Firebase can be a great tool for the right product. Before you commit to part of firebase, are you okay with the rest of the products in the Firebase ecosystem? Is the lock-in worth not writing it yourself? Weighing such trade offs is the essence of good software engineering and architecture.
 
 ## When to use Firebase
 
