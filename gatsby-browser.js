@@ -11,11 +11,25 @@ import {
   faBookReader,
   faHandPaper,
   faCodeBranch,
+  faEnvelopeSquare,
 } from '@fortawesome/free-solid-svg-icons'
+import {
+  faTwitterSquare,
+  faMastodon,
+  faLinkedin,
+  faGithubSquare,
+  faGitlab,
+} from '@fortawesome/free-brands-svg-icons'
 
 export const onClientEntry = () => {
   library.add(faEnvelopeOpen)
   library.add(faBookReader)
   library.add(faHandPaper)
   library.add(faCodeBranch)
+  library.add(faEnvelopeSquare)
+  library.add(faTwitterSquare)
+  library.add(faMastodon)
+  library.add(faLinkedin)
+  library.add(faGithubSquare)
+  library.add(faGitlab)
 }
