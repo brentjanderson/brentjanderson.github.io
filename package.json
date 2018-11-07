@@ -36,7 +36,8 @@
     "develop": "gatsby develop",
     "format": "prettier --write '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gatsby build && echo \"www.brentjanderson.com\" > public/CNAME && gh-pages -d public -b master"
+    "deploy": "gatsby build && echo \"www.brentjanderson.com\" > public/CNAME && gh-pages -d public -b master",
+    "new-post": "bin/new_post.sh"
   },
   "devDependencies": {
     "gh-pages": "^2.0.1",
