@@ -82,10 +82,25 @@ If it's a business and not a hobby, then you need to take a step back and ask so
 - What does it cost to deliver your solution to each customer?
 - How will you make enough money to maintain your solution?
 
-These questions are not magic. They are also not exhaustive. As an entrepreneur, **your job is to reduce the risk of failure**. Getting real answers to these and other questions is critical to doing your job.
+These questions are not magic. They are also not exhaustive. As an entrepreneur, **your job is to eliminate risk**. Getting real answers to these and other questions is critical to doing your job.
 
-# Ask inspired questions
+# Your business model
+
+I encourage anyone interested in entrepreneurship to study the [business model canvas](https://strategyzer.com/canvas/business-model-canvas). When you first get started, print out a blueprint-sized copy of the canvas, and fill it with sticky notes detailing what you believe about your potential business. Who are your customers? What do they care about? What is your value proposition? How will you reach customers? How will you deliver your value to customers? What will it take to support your business?
+
+Filling in this canvas can be an eye-opening experience. With an eye of honesty towards your canvas, does it make sense? Can you explain it with clarity to potential advisors, or even customers? If you find it hard to believe your canvas up front, stop and reconsider your assumptions. What things need to hold true for it to fit? Examine your assumptions, and work on the canvas until you have clarity around your message, what you are offering to customers, and what you can do to refine that message and value proposition.
+
+As a word of caution, **do not waste too much time with the canvas**. The above questions and canvas modelling exercise should take no more than a day or two. It serves to help clarify and structure your thinking, so that you can...
+
+# Hit the pavement
+
+The next step is to start talking to customers. If you don't know who your customers are, you need to rewind and start at the top of this process. Where do they meet? How can you connect with them? This stage of the process is not what many consider traditional business work. Its more like a combination of anthropology and therapy. As you sit down to meet with customers, clear your head of anything about how this conversation will benefit you. These conversations must be squarely set on discovering your customer's pain. Do not talk about your intended solution. Don't bring it up. You must be 100% committed to listening. Ask open-ended questions, and listen.
+
+Use these resources to help develop questions and prepare for your interview with customers:
+
+- [Interview script tips & generator](https://customerdevlabs.com/2013/11/05/how-i-interview-customers/)
+- [Atlassian guide to customer interviews](https://www.atlassian.com/team-playbook/plays/customer-interview)
 
 # Footnotes
 
-<a name="footnote1" href="#sup1">1</a>: Most of
+<a name="footnote1" href="#sup1">1</a>: Most apps achieve failure because of business problems and not technical problems. In today's saturated world with millions of apps and billions of websites, the challenge is not building something. The challenge is making a difference in the lives of real people. The technology is an implementation detail to that end.
