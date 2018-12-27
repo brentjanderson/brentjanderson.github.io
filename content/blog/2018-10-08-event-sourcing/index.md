@@ -18,27 +18,31 @@ I am fascinated by pushing the boundaries of software. A few years ago, I read [
 
 Not long after that piece about real-time data and logs, I started to watch and read up on [Event Sourcing](https://martinfowler.com/eaaDev/EventSourcing.html). I am not the first to write about event sourcing, CQRS, or other related topics. Rather, this article aims to be the kind of content I wished I had when I first started down this rabbit hole.
 
+## CRUD
+
+## Where CRUD falls short
+
 ## State management is hard
 
 Before we define Event Sourcing, let's take a step back and talk about some related concepts.
 
 Software exists to help people get things done. Most software requires that we track state on behalf of the user. We store photos, we remember what things they liked or retweeted, we record if a blog post has been published yet or not, and so on.
 
-Most commonly, we use a database to track state. We create tables, relationships, and add data over time. Choosing a database is fraught with a lot of complex decisions (although I personally)
+Most commonly, we use a database to track state. We create tables, relationships, and add data over time. Choosing a database is fraught with a lot of complex decisions (although I personally recommend Postgres for most projects). Most frequently, we reach for whatever we feel most comfortable using.
 
-People write software to capture pictures, write blogs, tweet, trade stocks, and more. As people use software, we give software information and then ask it to keep track of it for us. This information could be the picture we took or the blog post we wrote. If a computer didn't remember what we wanted it to remember, it wouldn't be particularly useful.
+Unfortunately, state management is hard. This is true no matter what you use to store your data.
 
-**Programmers call this stuff that we want the computer to remember "state".** State is anything we want the computer to remember over time. A simple calculator keeps track of the numbers you want to crunch. Your photo library keeps photos and information about them, like the time you took the photo. More sophisticated systems like banking or accounting software track balances and transactions.
+### Data integrity & backups
 
-Although state is what makes software useful, it is also what makes software hard. "Stateless" software is easier to write, improve, and understand. Most bugs come from problems with managing state. Thus programmers spend lots of time learning about ways to manage and simplify state.
+How do you plan on keeping your data safe, available, and recoverable in the face of failure?
 
-## A few terms before we dive in
+### The way you store the data is different than the way you use the data
+* Migrating state, especially in a running system
+* State you didn't think you needed to keep around
 
-Most software tracks state using a database. A database provides a central place to store and retrieve state. Databases make it easier to write complex systems because they are so good at managing state. When we put something in an online shopping cart, we are adding something to the database. If we come back to that cart a few days later, the cart still has our stuff in it. That's because the database remembers it for us.
+Unfortunately, the way you view your data depends on the context you find it in. When stored in a relational database, your data will be in the form of rows and columns on a disk. When it's on the user's screen, your data is turned into pixels. Somewhere in between those two extremes, data is in the form of JSON, objects, and many other forms. Because the database is the ultimate source of state in your application, the shape of your data in your database will shape the rest of your application. This is not always ideal. What happens when you want to present your data in a way that is different from the way you store that data? Or when you need to integrate data from multiple places at once? These state management issues are hard.
 
-Basic database use works for many applications. Sometimes our natural approach to using databases leads to problems down the road. For instance, if we have two people editing the same document at the same time, and both hit save, what will happen? What about handling an order when a customer requests a refund, but we track the order in more than one system? How do we keep those systems in sync? What happens when a customer goes to pay for something but the payment gateway is down? How do we handle that error?
-
-Although databases can handle these scenarios, over time we collect complexity. Well-designed software should be flexible in the fae of these and other changes.
+Another challenge in state management 
 
 ## What is event sourcing?
 
