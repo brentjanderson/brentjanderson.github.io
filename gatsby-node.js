@@ -24,12 +24,17 @@ exports.createPages = ({ actions, graphql }) => {
 
   const blogPostTemplate = path.resolve(`src/templates/blogTemplate.js`)
 
+  const draftPredicate =
+    process.env.NODE_ENV === 'development'
+      ? ''
+      : 'filter: { frontmatter: { draft: { eq: false } } }'
+
   return graphql(`
     {
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
         limit: 1000
-        filter: { frontmatter: { draft: { eq: false } } }
+        ${draftPredicate}
       ) {
         edges {
           node {
