@@ -116,9 +116,8 @@ const AboutPage = data => {
             </p>
 
             <p>
-              By day I'm a full-stack native iOS engineer at{' '}
-              <a href="https://yours.co">Yours.co</a>. By night, I'm a dad,
-              husband, <a href="https://lds.org">Latter-day Saint</a>, and
+              By day I'm a full-stack engineer at <a href="https://lambdaschool.com">Lambda School</a>. By night, I'm a dad,
+              husband, <a href="https://churchofjesuschrist.org">Latter-day Saint</a>, and
               co-founder at <a href="https://coriaria.com">Coriaria</a> where we
               develop products and services that strengthen homes and families.
             </p>
@@ -132,7 +131,7 @@ const AboutPage = data => {
 
             <p>
               As an engineer, I specialize in full-stack web and mobile
-              applications engineering using React & React Native, iOS/Swift,
+              applications engineering using React & React Native, Postgres, iOS/Swift,
               Elixir, and NodeJS. I also help teams build the best process for
               rapid innovation across the stack.
             </p>
