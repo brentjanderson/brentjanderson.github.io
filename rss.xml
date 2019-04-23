@@ -1,4 +1,278 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brent Anderson]]></title><description><![CDATA[Brent Anderson's musings]]></description><link>https://www.brentjanderson.com</link><generator>RSS for Node</generator><lastBuildDate>Wed, 31 Oct 2018 22:07:02 GMT</lastBuildDate><item><title><![CDATA[Tim Cook on Privacy]]></title><description><![CDATA[I recently read Tim Cook's inspiring remarks on privacy. If you haven't read it yet, I encourage you to  check it out . As I have reflected…]]></description><link>https://www.brentjanderson.com/blog/2018-10-24-tim-cook-privacy/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2018-10-24-tim-cook-privacy/</guid><pubDate>Wed, 24 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I recently read Tim Cook&apos;s inspiring remarks on privacy. If you haven&apos;t read it yet, I encourage you to &lt;a href=&quot;https://www.privacyconference2018.org/system/files/2018-10/Tim%20Cook%20speech%20-%20ICDPPC2018.pdf&quot;&gt;check it out&lt;/a&gt;.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brent Anderson]]></title><description><![CDATA[Brent Anderson's musings]]></description><link>https://www.brentjanderson.com</link><generator>RSS for Node</generator><lastBuildDate>Tue, 23 Apr 2019 22:51:06 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[Event sourcing a la Postgres BEGIN TRANSACTION User connect, calls domain stored procedure Domain stored procedure does any domain…]]></description><link>https://www.brentjanderson.com/blog/2018-10-08-event-sourcing/Event sourcing ala postgres/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2018-10-08-event-sourcing/Event sourcing ala postgres/</guid><content:encoded>&lt;h1&gt;Event sourcing a la Postgres&lt;/h1&gt;
+&lt;p&gt;BEGIN TRANSACTION&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;User connect, calls domain stored procedure&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Domain stored procedure does any domain validation (if any), passes command to aggregate command validation&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Aggregate state retrieved from tables, checked against command. Rollback on fail, generate events on success&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Events passed to write_event stored procedure, which appends them to event log&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Event log aggregate trigger applies events to aggregate tables&lt;/li&gt;
+&lt;li&gt;Event log notify trigger fires NOTIFY for subscribed consumers&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Event log event handler triggers fire synchronous event handlers&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Event handlers do something with an event&lt;/li&gt;
+&lt;li&gt;Projections are event handlers that have a unique ID, store high water read mark from events table per event with ID&lt;/li&gt;
+&lt;li&gt;Process managers are event handlers that store state between events in a separate table&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Return true&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Return true&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Return true&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Return true
+COMMIT&lt;/li&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[How I Postgres]]></title><description><![CDATA[At  Lambda School , we love postgres. Here are a few gems I've learned that make
+developing with it a joy: PSQL for Mac The best way to…]]></description><link>https://www.brentjanderson.com/blog/2018-04-23-how-i-postgres/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2018-04-23-how-i-postgres/</guid><pubDate>Tue, 23 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;At &lt;a href=&quot;https://lambdaschool.com/&quot;&gt;Lambda School&lt;/a&gt;, we love postgres. Here are a few gems I&apos;ve learned that make
+developing with it a joy:&lt;/p&gt;
+&lt;h2&gt;PSQL for Mac&lt;/h2&gt;
+&lt;p&gt;The best way to handle this is to install
+&lt;a href=&quot;https://postgresapp.com/&quot;&gt;Postgres.app&lt;/a&gt; and then add the following to your
+shell profile:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-shell&quot;&gt;export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Et voilà! Reload your terminal and &lt;code&gt;psql&lt;/code&gt; will be ready to go, along with other
+Postgres command line tools. To update to the latest version is as simple as
+opening Postgres.app and letting it update.&lt;/p&gt;
+&lt;h2&gt;PSQL Profile&lt;/h2&gt;
+&lt;p&gt;This file in &lt;code&gt;~/.psqlrc&lt;/code&gt; will configure &lt;code&gt;psql&lt;/code&gt; with a few key settings to make
+it more useful:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sql&quot;&gt;\set QUIET 1 -- Disable logs while this script runs
+
+-- Show if we are in a transaction or not,
+-- and the current database if it&apos;s different from our username
+\set PROMPT1 &apos;%~%x%# &apos;
+
+-- Update the prompt when we&apos;re on a multi-line script
+\set PROMPT2 &apos;[more] %R &gt; &apos;
+
+\set VERBOSITY verbose
+
+\set HISTFILE ~/.psql_history- :DBNAME
+\set HISTCONTROL ignoredups
+\set COMP_KEYWORD_CASE upper
+
+
+\x auto -- Set expanded output to auto
+
+-- Stop transactions when there&apos;s an error
+\set ON_ERROR_STOP on
+-- Require the user to rollback when there&apos;s an error
+\set ON_ERROR_ROLLBACK interactive
+
+-- Make null characters print as this character
+\pset null &apos;¤&apos;
+\pset linestyle &apos;unicode&apos;
+-- Make tables look nicer
+\pset unicode_border_linestyle single
+\pset unicode_column_linestyle single
+\pset unicode_header_linestyle double
+
+-- Make intervals look clean
+\set intervalstyle to &apos;postgres_verbose&apos;;
+
+-- Settings to pass to `less` when paging through output
+\setenv LESS &apos;-iMFXSx4R&apos;
+
+-- Use visual studio code as my editor
+\setenv EDITOR &apos;/usr/local/bin/code -w&apos;
+
+-- Show how long each query takes
+\timing on
+
+-- Restore logs
+\unset QUIET
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;PG Services&lt;/h2&gt;
+&lt;p&gt;A lesser-known feature of &lt;code&gt;psql&lt;/code&gt; and other bundled Postgres command line tools
+is the &lt;code&gt;~/.pg_service.conf&lt;/code&gt; file, or &lt;a href=&quot;https://www.postgresql.org/docs/9.0/libpq-pgservice.html&quot;&gt;connection service file&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-conf&quot;&gt;# comment
+[connection-name]
+host=somewhere
+user=foo
+password=bar
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can create as many &lt;code&gt;[connection-name]&lt;/code&gt; blocks as you like, and name them
+according to what they configure. To use a specific service with psql is as easy
+as &lt;code&gt;PGSERVICE=connection-name psql&lt;/code&gt;. To make it easier, I add the following to
+my &lt;code&gt;.zshrc&lt;/code&gt; file:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-zsh&quot;&gt;export PGSERVICE=local
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The corresponding &lt;code&gt;[local]&lt;/code&gt; section in the connection service file points to my
+local machine. Pointing at production, staging, test, or other environments
+is as easy as changing the variable on the command line.&lt;/p&gt;
+&lt;h2&gt;Running a Postgres database locally&lt;/h2&gt;
+&lt;p&gt;You can use &lt;a href=&quot;https://postgresapp.com/&quot;&gt;Postgres.app&lt;/a&gt; to setup and manage different versions of Postgres
+on your mac. At &lt;a href=&quot;https://lambdaschool.com/&quot;&gt;Lambda School&lt;/a&gt; we use Docker to set up local
+dependencies (and I generally prefer using Docker to Postgres.app).&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Resilience and Tolerance]]></title><description><![CDATA[From  https://seths.blog/2019/03/resilience-and-tolerances/ You’ll probably find that while precision feels like the way forward, resilience…]]></description><link>https://www.brentjanderson.com/blog/2019-03-18-resilience-and-tolerance/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2019-03-18-resilience-and-tolerance/</guid><pubDate>Mon, 18 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;From &lt;a href=&quot;https://seths.blog/2019/03/resilience-and-tolerances/&quot;&gt;https://seths.blog/2019/03/resilience-and-tolerances/&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You’ll probably find that while precision feels like the way forward, resilience, the ability to thrive when things go wrong, is a much safer bet.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Although Seth is famous for writing about marketing, his writing reflects truth. The truths he writes about apply broadly.&lt;/p&gt;
+&lt;p&gt;Reading this reminds me of the best literature in engineering reliable software systems. The pattern that seems to be most powerful is to declare how things ought to be, and to have a machine that is responsible for herding what it observes in your system towards what you said it&apos;s supposed to be. Kubernetes manifests come to mind in particular.&lt;/p&gt;
+&lt;p&gt;Having strong precision is important because it can help clean up a lot of the messes before you get it out into the real world. Type systems, static analysis, test coverage, and other pre-flight checks help rule out classes of problems that you would otherwise have to build resilience for.&lt;/p&gt;
+&lt;p&gt;From there, we can focus on resilience. Resilience requires understanding other patterns. Systems thinking, embracing failure rather than insulating it, setting and enforcing clear expectations between system components. Resilience requires having a clean path to shut things down, and a clean path to start things up. If you can reboot something into a known stable state and then move forward, you are far more resilient and ant-fragile.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Typescript FTW]]></title><description><![CDATA[Today, I've decided that I prefer Typescript to Javascript. I think it offers great features and protection without the hassle of an overly…]]></description><link>https://www.brentjanderson.com/blog/2019-03-04-typescript-ftw/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2019-03-04-typescript-ftw/</guid><pubDate>Mon, 04 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today, I&apos;ve decided that I prefer Typescript to Javascript. I think it offers great features and protection without the hassle of an overly prescriptive strongly-type langauge, and it has made writing software for Lambda School much more effective.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Notes on "How to Read"]]></title><description><![CDATA[These are some unstructured notes from a  free video  published by
+ Farnam Street  on how to read. These notes are just a loose
+collection…]]></description><link>https://www.brentjanderson.com/blog/2019-01-7-how-to-read-notes/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2019-01-7-how-to-read-notes/</guid><pubDate>Mon, 07 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;These are some unstructured notes from a &lt;a href=&quot;https://fs.blog/the-art-of-reading-sneak-peek-module-4-video/&quot; title=&quot;Video Course&quot;&gt;free video&lt;/a&gt; published by
+&lt;a href=&quot;https://fs.blog&quot; title=&quot;Farnam Street&quot;&gt;Farnam Street&lt;/a&gt; on how to read. These notes are just a loose
+collection, so don&apos;t take them as definitive or even complete, but they seemed
+useful.&lt;/p&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Read from multiple perspectives&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Read many perspectives from multiple authors&lt;/li&gt;
+&lt;li&gt;&quot;Read syntopically&quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Effort and concentration&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Skim and superficial reading to filter and prepare for reading&lt;/li&gt;
+&lt;li&gt;Determine who is worth listening to, what their positions are&lt;/li&gt;
+&lt;li&gt;Cluster reading close to each other temporally&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&quot;If you understand the general principle,
+you don&apos;t need to see every one of its examples.&quot;
+~ Thoreau&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;-- Five steps to read well --&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Find relevant passages to read&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Do an intelligent/thorough skim of the material&lt;/li&gt;
+&lt;li&gt;Create bibliography to figure out how to get the most out of the material&lt;/li&gt;
+&lt;li&gt;Read it all comparitively&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Translate vocabulary&lt;/li&gt;
+&lt;li&gt;Clear questions on what you want answered&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Define the issue&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What are the different takes from things?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Analyze the discussions&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&quot;It&apos;s an illusion that we actually understand the past after learning about it.&quot;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How I set up my machine]]></title><description><![CDATA[I started at Lambda School this year, writing software to help students and
+staff be more productive. As with any modern software job, I had…]]></description><link>https://www.brentjanderson.com/blog/2019-01-07-how-i-set-up-my-machine/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2019-01-07-how-i-set-up-my-machine/</guid><pubDate>Mon, 07 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I started at Lambda School this year, writing software to help students and
+staff be more productive. As with any modern software job, I had to set up a new
+laptop with all of the tools I rely on each day to get the job done.&lt;/p&gt;
+&lt;p&gt;After setting up the laptop and tightening up a few pieces, here is my
+definitive guide to what I install, and why.&lt;/p&gt;
+&lt;h2&gt;The Hardware&lt;/h2&gt;
+&lt;p&gt;15&quot; Macbook Pro (Space Gray) - Intel core i7, 16 GB RAM, 512 GB SSD&lt;/p&gt;
+&lt;p&gt;I&apos;ve debated whether or not I want to dive into a Thinkpad with Ubuntu, but my
+inertia with Mac is pretty strong. No reason to try something new just for fun
+at this juncture. Same thing applies to Vim, although I may take some time to
+get into it at some point.&lt;/p&gt;
+&lt;p&gt;Also, I don&apos;t particularly care about Space Gray vs. Silver, but my home laptop
+is silver so space gray helps me keep track of which one I&apos;m using.&lt;/p&gt;
+&lt;h2&gt;Mac Apps&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Spark for eMail&lt;/li&gt;
+&lt;li&gt;Firefox&lt;/li&gt;
+&lt;li&gt;Spotify&lt;/li&gt;
+&lt;li&gt;Slack&lt;/li&gt;
+&lt;li&gt;Monday.com&lt;/li&gt;
+&lt;li&gt;Notion&lt;/li&gt;
+&lt;li&gt;Zoom Conference&lt;/li&gt;
+&lt;li&gt;1Password&lt;/li&gt;
+&lt;li&gt;Amethyst for window management&lt;/li&gt;
+&lt;li&gt;Dropbox&lt;/li&gt;
+&lt;li&gt;Keybase&lt;/li&gt;
+&lt;li&gt;F.lux&lt;/li&gt;
+&lt;li&gt;Fohkuhs Pomodoro Timer&lt;/li&gt;
+&lt;li&gt;Visual Studio Code&lt;/li&gt;
+&lt;li&gt;iTerm 2&lt;/li&gt;
+&lt;li&gt;Docker for Mac&lt;/li&gt;
+&lt;li&gt;Postgres.app for local &lt;code&gt;psql&lt;/code&gt; command support&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Command Line Work&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can tell a lot about an engineer by the contents of his shell profile.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;iTerm 2 is my preferred terminal since it&apos;s easy to configure and the profiles
+are transferrable between machines.&lt;/p&gt;
+&lt;h3&gt;ZSH &amp;#x26; Oh-my-zsh&lt;/h3&gt;
+&lt;p&gt;I like the plugins &lt;a href=&quot;https://ohmyz.sh/&quot;&gt;Oh-my-zsh&lt;/a&gt; comes packed with: &lt;code&gt;git&lt;/code&gt;, &lt;code&gt;docker&lt;/code&gt;, &lt;code&gt;node&lt;/code&gt;, &lt;code&gt;yarn&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;I use the &lt;code&gt;agnoster&lt;/code&gt; theme with &lt;a href=&quot;https://github.com/powerline/fonts&quot;&gt;powerline-fonts&lt;/a&gt; installed.&lt;/p&gt;
+&lt;h3&gt;nvm &amp;#x26; node&lt;/h3&gt;
+&lt;p&gt;Although I prefer &lt;a href=&quot;https://asdf-vm.com/&quot;&gt;asdf&lt;/a&gt; for versioning dependencies, however to be consistent with our team standards I installed &lt;a href=&quot;https://github.com/creationix/nvm&quot;&gt;nvm&lt;/a&gt; for handling our node versions.&lt;/p&gt;
+&lt;p&gt;I set up an &lt;code&gt;~/.nvmrc&lt;/code&gt; file as well for some global defaults as needed, including version pinning for dependencies.&lt;/p&gt;
+&lt;h3&gt;psql&lt;/h3&gt;
+&lt;p&gt;I install &lt;a href=&quot;https://postgresapp.com/&quot;&gt;Postgres.app&lt;/a&gt; so it&apos;s easy to get &lt;code&gt;psql&lt;/code&gt; on my command line.&lt;/p&gt;
+&lt;p&gt;I have a &lt;code&gt;.psqlrc&lt;/code&gt; file to set up table formatting and other features of &lt;code&gt;psql&lt;/code&gt; so it becomes my go-to tool for interacting with postgres (typically over GUI clients).&lt;/p&gt;
+&lt;h3&gt;Homebrew&lt;/h3&gt;
+&lt;p&gt;I install &lt;a href=&quot;https://brew.sh&quot;&gt;Homebrew&lt;/a&gt; so that it&apos;s easy to get components I need installed. I typically install &lt;code&gt;fx&lt;/code&gt; for reading JSON files and &lt;code&gt;wget&lt;/code&gt; out of the gate.&lt;/p&gt;
+&lt;h2&gt;Visual Studio Code&lt;/h2&gt;
+&lt;p&gt;VS Code is a fantastic code editor that can be extended to essentially be a full IDE. Although someday I might jump into tmux and vim, VS Code is fast, easy to use and set up, and it works very well.&lt;/p&gt;
+&lt;p&gt;My preferred base extensions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DotENV&lt;/li&gt;
+&lt;li&gt;ESLint&lt;/li&gt;
+&lt;li&gt;Docker&lt;/li&gt;
+&lt;li&gt;markdownlint&lt;/li&gt;
+&lt;li&gt;GitLens&lt;/li&gt;
+&lt;li&gt;npm&lt;/li&gt;
+&lt;li&gt;vscode-icons&lt;/li&gt;
+&lt;li&gt;VS Live Share&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I add in additional extensions for other language supports.&lt;/p&gt;
+&lt;h2&gt;Ad, Tracking, and other blocking with DNSMasq&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.thekelleys.org.uk/dnsmasq/doc.html&quot;&gt;DNSMasq&lt;/a&gt; is a bundle of network infrastructure services, including a DNS resolver. I use DNSMasq to block trackers, ad networks, and time wasting websites cold. Here&apos;s how setup works:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;brew install dnsmasq&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Edit &lt;code&gt;/usr/local/etc/dnsmasq.conf&lt;/code&gt; so it includes the following line: &lt;code&gt;conf-dir=/usr/local/etc/dnsmasq.d/,*.conf&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add a directory &lt;code&gt;/usr/local/etc/dnsmasq.d&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Configure basic dnsmasq settings by adding a file to &lt;code&gt;/usr/local/etc/dnsmasq.d/resolvers.conf&lt;/code&gt; with the following contents:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-conf&quot;&gt;# Tell dnsmasq to get its DNS servers from this config file only
+no-resolv
+# Add alternate DNS servers
+server=208.67.222.222
+server=208.67.220.220
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Configure another dnsmasq.conf file &lt;code&gt;time-wasters.conf&lt;/code&gt; with the following format:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-conf&quot;&gt;address=/.facebook.com/facebook.com/ # This stops any domain under facebook.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;sudo brew services start dnsmasq&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Firefox&lt;/h2&gt;
+&lt;p&gt;I use &lt;a href=&quot;https://duck.com&quot;&gt;Duck.com&lt;/a&gt; for search&lt;/p&gt;
+&lt;p&gt;Extensions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1Password extension&lt;/li&gt;
+&lt;li&gt;HTTPS Everywhere&lt;/li&gt;
+&lt;li&gt;Privacy Badger&lt;/li&gt;
+&lt;li&gt;Terms of Service; Didn&apos;t Read&lt;/li&gt;
+&lt;li&gt;uBlock Origin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Other details&lt;/h2&gt;
+&lt;p&gt;I will update this with further details, but for now this is the base setup I prefer to use on my system.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Tim Cook on Privacy]]></title><description><![CDATA[I recently read Tim Cook's inspiring remarks on privacy. If you haven't read it yet, I encourage you to  check it out . As I have reflected…]]></description><link>https://www.brentjanderson.com/blog/2018-10-24-tim-cook-privacy/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2018-10-24-tim-cook-privacy/</guid><pubDate>Wed, 24 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I recently read Tim Cook&apos;s inspiring remarks on privacy. If you haven&apos;t read it yet, I encourage you to &lt;a href=&quot;https://www.privacyconference2018.org/system/files/2018-10/Tim%20Cook%20speech%20-%20ICDPPC2018.pdf&quot;&gt;check it out&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;As I have reflected on his message, one thing stood out: Technology must be infused with our humanity. That requires human commitment to that ideal. Technology can&apos;t put humanity into itself: That is our unique human responsibility.&lt;/p&gt;
 &lt;p&gt;We could say Technology is indifferent. The truth is, it&apos;s not anything. It doesn&apos;t care. When we say that an algorithm is biased, the truth is that the way it was implemented was biased. The brick of aluminum and glass in your hand It doesn&apos;t care if it&apos;s been recharged recently, or what you share on the internet. To the machines involved, the pictures and words we share on the internet (including this blog post) look the same as an Amazon order or an advertisement. There is no inherent meaning to them from the machine&apos;s point of view.&lt;/p&gt;
 &lt;p&gt;In its darkest forms, the systematic aggregation of data is quietly shaping our lives. From the ads we see to the decisions we make, we are subtly controlled by powerful algorithms that are seeking to shape our behavior. Most of the time, this influence is intended to be innocuous. &quot;Advertising helps the economy.&quot; &quot;We want the world to be more open and connected.&quot; Surely there is some value to these claims, but the aggregation of the data and the behavior is creating a complex soup of interactions that none of us can fully comprehend. It is impossible to tease apart.&lt;/p&gt;
@@ -46,20 +320,20 @@
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAgP/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAZ7MnY0cCb//xAAaEAEAAgMBAAAAAAAAAAAAAAABAAIDERMi/9oACAEBAAEFAjIQ9CaZW9qzqs//xAAYEQACAwAAAAAAAAAAAAAAAAAAAREhQf/aAAgBAwEBPwFRpR//xAAYEQACAwAAAAAAAAAAAAAAAAAAAQIhQf/aAAgBAgEBPwFuWFn/xAAXEAEBAQEAAAAAAAAAAAAAAAAAIQEQ/9oACAEBAAY/Ak7NV//EABcQAQEBAQAAAAAAAAAAAAAAAAEAETH/2gAIAQEAAT8hz8YO4cZ3GJHWJVuFv//aAAwDAQACAAMAAAAQ3A//xAAXEQEBAQEAAAAAAAAAAAAAAAABACER/9oACAEDAQE/ECXEveX/xAAXEQADAQAAAAAAAAAAAAAAAAAAASER/9oACAECAQE/EMVCmn//xAAcEAACAgIDAAAAAAAAAAAAAAABEQAhMUFRYZH/2gAIAQEAAT8QXku2KqBWkCo8JiHUYO9GvIpPLxP/2Q==&apos;); background-size: cover; display: block;&quot;
+      style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAgP/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAZ7MnY0cCb//xAAaEAEAAgMBAAAAAAAAAAAAAAABAAIDERMi/9oACAEBAAEFAjIQ9CaZW9qzqs//xAAYEQACAwAAAAAAAAAAAAAAAAAAAREhQf/aAAgBAwEBPwFRpR//xAAYEQACAwAAAAAAAAAAAAAAAAAAAQIhQf/aAAgBAgEBPwFuWFn/xAAXEAEBAQEAAAAAAAAAAAAAAAAAIQEQ/9oACAEBAAY/Ak7NV//EABgQAQEBAQEAAAAAAAAAAAAAAAEAESEx/9oACAEBAAE/Ic/jDuHGdxiR1iVbhb//2gAMAwEAAgADAAAAENwP/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQAhEf/aAAgBAwEBPxAlxL3l/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAEhEf/aAAgBAgEBPxDFQpp//8QAHBAAAgICAwAAAAAAAAAAAAAAAREAITFBUWGR/9oACAEBAAE/EF5LtiqhRaQKjwmIdRg70a8ik8vE/9k=&apos;); background-size: cover; display: block;&quot;
     &gt;
       &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;fire.jpg&quot;
         title=&quot;Photo by https://unsplash.com/photos/HCCJgI4YwbQ&quot;
-        src=&quot;/static/fire-2047286e866179e69fc2e847d584d29f-80a2a.jpg&quot;
-        srcset=&quot;/static/fire-2047286e866179e69fc2e847d584d29f-49da2.jpg 275w,
-/static/fire-2047286e866179e69fc2e847d584d29f-8cc5e.jpg 550w,
-/static/fire-2047286e866179e69fc2e847d584d29f-80a2a.jpg 1100w,
-/static/fire-2047286e866179e69fc2e847d584d29f-d6076.jpg 1650w,
-/static/fire-2047286e866179e69fc2e847d584d29f-25733.jpg 2200w,
-/static/fire-2047286e866179e69fc2e847d584d29f-7c033.jpg 3000w&quot;
+        src=&quot;/static/2047286e866179e69fc2e847d584d29f/1ef49/fire.jpg&quot;
+        srcset=&quot;/static/2047286e866179e69fc2e847d584d29f/338d2/fire.jpg 275w,
+/static/2047286e866179e69fc2e847d584d29f/48316/fire.jpg 550w,
+/static/2047286e866179e69fc2e847d584d29f/1ef49/fire.jpg 1100w,
+/static/2047286e866179e69fc2e847d584d29f/b1122/fire.jpg 1650w,
+/static/2047286e866179e69fc2e847d584d29f/7db3f/fire.jpg 2200w,
+/static/2047286e866179e69fc2e847d584d29f/1ac66/fire.jpg 3000w&quot;
         sizes=&quot;(max-width: 1100px) 100vw, 1100px&quot;
       /&gt;
     &lt;/span&gt;
@@ -146,21 +420,21 @@
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 66.82480515079634%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAD/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAEGidbkUqP/xAAaEAACAgMAAAAAAAAAAAAAAAAAAQISERMx/9oACAEBAAEFAuFSmRQTWscD/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFhABAQEAAAAAAAAAAAAAAAAAEDEA/9oACAEBAAY/Ait3/8QAHBAAAgICAwAAAAAAAAAAAAAAAAERITFBUYGh/9oACAEBAAE/IVDLRTrhZJ2pOhIbsUMPwZOZ/9oADAMBAAIAAwAAABCcP//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAEDAQE/EKf/xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPxCH/8QAGxABAAMBAQEBAAAAAAAAAAAAAQARITFxUaH/2gAIAQEAAT8QqA2NKyn7AFRC1uivezhvtZSvya8ndMvWFulHumWOfgT/2Q==&apos;); background-size: cover; display: block;&quot;
+      style=&quot;padding-bottom: 66.82480515079634%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAD/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAEGidbkUqP/xAAaEAACAgMAAAAAAAAAAAAAAAAAAQISERMx/9oACAEBAAEFAuFSmRQTWscD/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFhABAQEAAAAAAAAAAAAAAAAAEDEA/9oACAEBAAY/Ait3/8QAHBAAAgICAwAAAAAAAAAAAAAAAAERITFBUXGB/9oACAEBAAE/IVDLRTzhZJ2pOhImxIsO+hk5n//aAAwDAQACAAMAAAAQnD//xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAwEBPxCn/8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQIBAT8Qh//EABsQAQADAQEBAQAAAAAAAAAAAAEAESExcVGh/9oACAEBAAE/EKgNjSsp+wIUQtbor3s4b7WUr8i9s7pl7NmkPdMsc/An/9k=&apos;); background-size: cover; display: block;&quot;
     &gt;
       &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;cockpit.jpg&quot;
         title=&quot;Image by https://unsplash.com/@dlohmar&quot;
-        src=&quot;/static/cockpit-5f7d82f806c734be8c0510f05d2f7e45-80a2a.jpg&quot;
-        srcset=&quot;/static/cockpit-5f7d82f806c734be8c0510f05d2f7e45-49da2.jpg 275w,
-/static/cockpit-5f7d82f806c734be8c0510f05d2f7e45-8cc5e.jpg 550w,
-/static/cockpit-5f7d82f806c734be8c0510f05d2f7e45-80a2a.jpg 1100w,
-/static/cockpit-5f7d82f806c734be8c0510f05d2f7e45-d6076.jpg 1650w,
-/static/cockpit-5f7d82f806c734be8c0510f05d2f7e45-25733.jpg 2200w,
-/static/cockpit-5f7d82f806c734be8c0510f05d2f7e45-17606.jpg 3300w,
-/static/cockpit-5f7d82f806c734be8c0510f05d2f7e45-6b906.jpg 5902w&quot;
+        src=&quot;/static/5f7d82f806c734be8c0510f05d2f7e45/1ef49/cockpit.jpg&quot;
+        srcset=&quot;/static/5f7d82f806c734be8c0510f05d2f7e45/338d2/cockpit.jpg 275w,
+/static/5f7d82f806c734be8c0510f05d2f7e45/48316/cockpit.jpg 550w,
+/static/5f7d82f806c734be8c0510f05d2f7e45/1ef49/cockpit.jpg 1100w,
+/static/5f7d82f806c734be8c0510f05d2f7e45/b1122/cockpit.jpg 1650w,
+/static/5f7d82f806c734be8c0510f05d2f7e45/7db3f/cockpit.jpg 2200w,
+/static/5f7d82f806c734be8c0510f05d2f7e45/5ebf8/cockpit.jpg 3300w,
+/static/5f7d82f806c734be8c0510f05d2f7e45/9ba42/cockpit.jpg 5902w&quot;
         sizes=&quot;(max-width: 1100px) 100vw, 1100px&quot;
       /&gt;
     &lt;/span&gt;
@@ -172,20 +446,31 @@
 &lt;p&gt;&lt;em&gt;Note: This article is still a draft, hence the blank sections at the bottom. Thanks for stopping by either way!&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;I am fascinated by pushing the boundaries of software. A few years ago, I read &lt;a href=&quot;https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying&quot;&gt;this marvelous piece about Logs&lt;/a&gt; - not messages for debugging, but using a log as a data structure. Ever since, the power of logs and capturing events has fascinated me.&lt;/p&gt;
 &lt;p&gt;Not long after that piece about real-time data and logs, I started to watch and read up on &lt;a href=&quot;https://martinfowler.com/eaaDev/EventSourcing.html&quot;&gt;Event Sourcing&lt;/a&gt;. I am not the first to write about event sourcing, CQRS, or other related topics. Rather, this article aims to be the kind of content I wished I had when I first started down this rabbit hole.&lt;/p&gt;
+&lt;h2&gt;CRUD&lt;/h2&gt;
+&lt;h2&gt;Where CRUD falls short&lt;/h2&gt;
 &lt;h2&gt;State management is hard&lt;/h2&gt;
 &lt;p&gt;Before we define Event Sourcing, let&apos;s take a step back and talk about some related concepts.&lt;/p&gt;
 &lt;p&gt;Software exists to help people get things done. Most software requires that we track state on behalf of the user. We store photos, we remember what things they liked or retweeted, we record if a blog post has been published yet or not, and so on.&lt;/p&gt;
-&lt;p&gt;Most commonly, we use a database to track state. We create tables, relationships, and add data over time. Choosing a database is fraught with a lot of complex decisions (although I personally)&lt;/p&gt;
-&lt;p&gt;People write software to capture pictures, write blogs, tweet, trade stocks, and more. As people use software, we give software information and then ask it to keep track of it for us. This information could be the picture we took or the blog post we wrote. If a computer didn&apos;t remember what we wanted it to remember, it wouldn&apos;t be particularly useful.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Programmers call this stuff that we want the computer to remember &quot;state&quot;.&lt;/strong&gt; State is anything we want the computer to remember over time. A simple calculator keeps track of the numbers you want to crunch. Your photo library keeps photos and information about them, like the time you took the photo. More sophisticated systems like banking or accounting software track balances and transactions.&lt;/p&gt;
-&lt;p&gt;Although state is what makes software useful, it is also what makes software hard. &quot;Stateless&quot; software is easier to write, improve, and understand. Most bugs come from problems with managing state. Thus programmers spend lots of time learning about ways to manage and simplify state.&lt;/p&gt;
-&lt;h2&gt;A few terms before we dive in&lt;/h2&gt;
-&lt;p&gt;Most software tracks state using a database. A database provides a central place to store and retrieve state. Databases make it easier to write complex systems because they are so good at managing state. When we put something in an online shopping cart, we are adding something to the database. If we come back to that cart a few days later, the cart still has our stuff in it. That&apos;s because the database remembers it for us.&lt;/p&gt;
-&lt;p&gt;Basic database use works for many applications. Sometimes our natural approach to using databases leads to problems down the road. For instance, if we have two people editing the same document at the same time, and both hit save, what will happen? What about handling an order when a customer requests a refund, but we track the order in more than one system? How do we keep those systems in sync? What happens when a customer goes to pay for something but the payment gateway is down? How do we handle that error?&lt;/p&gt;
-&lt;p&gt;Although databases can handle these scenarios, over time we collect complexity. Well-designed software should be flexible in the fae of these and other changes.&lt;/p&gt;
+&lt;p&gt;Most commonly, we use a database to track state. We create tables, relationships, and add data over time. Choosing a database is fraught with a lot of complex decisions (although I personally recommend Postgres for most projects). Most frequently, we reach for whatever we feel most comfortable using.&lt;/p&gt;
+&lt;p&gt;Unfortunately, state management is hard. This is true no matter what you use to store your data.&lt;/p&gt;
+&lt;h3&gt;Data integrity &amp;#x26; backups&lt;/h3&gt;
+&lt;p&gt;How do you plan on keeping your data safe, available, and recoverable in the face of failure?&lt;/p&gt;
+&lt;h3&gt;The way you store the data is different than the way you use the data&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Migrating state, especially in a running system&lt;/li&gt;
+&lt;li&gt;State you didn&apos;t think you needed to keep around&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Unfortunately, the way you view your data depends on the context you find it in. When stored in a relational database, your data will be in the form of rows and columns on a disk. When it&apos;s on the user&apos;s screen, your data is turned into pixels. Somewhere in between those two extremes, data is in the form of JSON, objects, and many other forms. Because the database is the ultimate source of state in your application, the shape of your data in your database will shape the rest of your application. This is not always ideal. What happens when you want to present your data in a way that is different from the way you store that data? Or when you need to integrate data from multiple places at once? These state management issues are hard.&lt;/p&gt;
+&lt;p&gt;Another challenge in state management &lt;/p&gt;
 &lt;h2&gt;What is event sourcing?&lt;/h2&gt;
 &lt;h2&gt;Why is it useful?&lt;/h2&gt;
 &lt;h2&gt;When should it be applied?&lt;/h2&gt;
 &lt;h2&gt;Where should it be avoided?&lt;/h2&gt;
 &lt;h2&gt;What other pitfalls are there?&lt;/h2&gt;
-&lt;h2&gt;How to get started with event sourcing&lt;/h2&gt;</content:encoded></item></channel></rss>
+&lt;h2&gt;How to get started with event sourcing&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[When you write a script that you didn't need]]></title><description><![CDATA[In my efforts to not burdened Bob with too many questions, I think I made a mistake today. Which is to say yesterday. In working on getting…]]></description><link>https://www.brentjanderson.com/blog/2019-02-13-journal-entry/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2019-02-13-journal-entry/</guid><pubDate>Fri, 12 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;In my efforts to not burdened Bob with too many questions, I think I made a mistake today.&lt;/p&gt;
+&lt;p&gt;Which is to say yesterday.&lt;/p&gt;
+&lt;p&gt;In working on getting our &lt;code&gt;atlas-db&lt;/code&gt; package upgraded to Version 3.0, I discovered that we needed to make some adjustments to the way data is stored in our staging and production databases. That let me down a rabbit hole of experimentation that resulted in a 500 line long script.&lt;/p&gt;
+&lt;p&gt;The script incorporated common table expressions and date of modifying common table expressions which I have never heard of or used before. It was a work art. And it was totally useless.&lt;/p&gt;
+&lt;p&gt;I submitted it to Bob to review, and after chatting with him directly, we determined a few changes needed to happen. As I worked on those changes, it became increasingly evident that we have existing facilities to handle the work that I was trying to do. Namely, our data import engine can overwrite existing records just fine, and anytime we have conflicts, we can just delete the data from the database and let the importer bring the data back in. It really is a simple as that. Nothing extra fancy or complicated to merge duplicate records.&lt;/p&gt;
+&lt;p&gt;I&apos;m glad we at least found a way to improve a check constraint that was causing issues, so that it can instead be a row-level security policy (those are easier to suspend for administrative activity, if necessary). Otherwise, the last two days have been close to a wash.&lt;/p&gt;
+&lt;p&gt;Lesson learned: It&apos;s a good idea to sanity check before asking.&lt;/p&gt;</content:encoded></item></channel></rss>
