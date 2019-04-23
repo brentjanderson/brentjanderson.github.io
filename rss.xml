@@ -1,42 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brent Anderson]]></title><description><![CDATA[Brent Anderson's musings]]></description><link>https://www.brentjanderson.com</link><generator>RSS for Node</generator><lastBuildDate>Tue, 23 Apr 2019 22:51:06 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[Event sourcing a la Postgres BEGIN TRANSACTION User connect, calls domain stored procedure Domain stored procedure does any domain…]]></description><link>https://www.brentjanderson.com/blog/2018-10-08-event-sourcing/Event sourcing ala postgres/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2018-10-08-event-sourcing/Event sourcing ala postgres/</guid><content:encoded>&lt;h1&gt;Event sourcing a la Postgres&lt;/h1&gt;
-&lt;p&gt;BEGIN TRANSACTION&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;User connect, calls domain stored procedure&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Domain stored procedure does any domain validation (if any), passes command to aggregate command validation&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Aggregate state retrieved from tables, checked against command. Rollback on fail, generate events on success&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Events passed to write_event stored procedure, which appends them to event log&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Event log aggregate trigger applies events to aggregate tables&lt;/li&gt;
-&lt;li&gt;Event log notify trigger fires NOTIFY for subscribed consumers&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Event log event handler triggers fire synchronous event handlers&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Event handlers do something with an event&lt;/li&gt;
-&lt;li&gt;Projections are event handlers that have a unique ID, store high water read mark from events table per event with ID&lt;/li&gt;
-&lt;li&gt;Process managers are event handlers that store state between events in a separate table&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Return true&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Return true&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Return true&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Return true
-COMMIT&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[How I Postgres]]></title><description><![CDATA[At  Lambda School , we love postgres. Here are a few gems I've learned that make
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brent Anderson]]></title><description><![CDATA[Brent Anderson's musings]]></description><link>https://www.brentjanderson.com</link><generator>RSS for Node</generator><lastBuildDate>Tue, 23 Apr 2019 22:57:06 GMT</lastBuildDate><item><title><![CDATA[How I Postgres]]></title><description><![CDATA[At  Lambda School , we love postgres. Here are a few gems I've learned that make
 developing with it a joy: PSQL for Mac The best way to…]]></description><link>https://www.brentjanderson.com/blog/2018-04-23-how-i-postgres/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2018-04-23-how-i-postgres/</guid><pubDate>Tue, 23 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;At &lt;a href=&quot;https://lambdaschool.com/&quot;&gt;Lambda School&lt;/a&gt;, we love postgres. Here are a few gems I&apos;ve learned that make
 developing with it a joy:&lt;/p&gt;
 &lt;h2&gt;PSQL for Mac&lt;/h2&gt;
@@ -467,10 +429,4 @@ server=208.67.220.220
 &lt;h2&gt;When should it be applied?&lt;/h2&gt;
 &lt;h2&gt;Where should it be avoided?&lt;/h2&gt;
 &lt;h2&gt;What other pitfalls are there?&lt;/h2&gt;
-&lt;h2&gt;How to get started with event sourcing&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[When you write a script that you didn't need]]></title><description><![CDATA[In my efforts to not burdened Bob with too many questions, I think I made a mistake today. Which is to say yesterday. In working on getting…]]></description><link>https://www.brentjanderson.com/blog/2019-02-13-journal-entry/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2019-02-13-journal-entry/</guid><pubDate>Fri, 12 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;In my efforts to not burdened Bob with too many questions, I think I made a mistake today.&lt;/p&gt;
-&lt;p&gt;Which is to say yesterday.&lt;/p&gt;
-&lt;p&gt;In working on getting our &lt;code&gt;atlas-db&lt;/code&gt; package upgraded to Version 3.0, I discovered that we needed to make some adjustments to the way data is stored in our staging and production databases. That let me down a rabbit hole of experimentation that resulted in a 500 line long script.&lt;/p&gt;
-&lt;p&gt;The script incorporated common table expressions and date of modifying common table expressions which I have never heard of or used before. It was a work art. And it was totally useless.&lt;/p&gt;
-&lt;p&gt;I submitted it to Bob to review, and after chatting with him directly, we determined a few changes needed to happen. As I worked on those changes, it became increasingly evident that we have existing facilities to handle the work that I was trying to do. Namely, our data import engine can overwrite existing records just fine, and anytime we have conflicts, we can just delete the data from the database and let the importer bring the data back in. It really is a simple as that. Nothing extra fancy or complicated to merge duplicate records.&lt;/p&gt;
-&lt;p&gt;I&apos;m glad we at least found a way to improve a check constraint that was causing issues, so that it can instead be a row-level security policy (those are easier to suspend for administrative activity, if necessary). Otherwise, the last two days have been close to a wash.&lt;/p&gt;
-&lt;p&gt;Lesson learned: It&apos;s a good idea to sanity check before asking.&lt;/p&gt;</content:encoded></item></channel></rss>
+&lt;h2&gt;How to get started with event sourcing&lt;/h2&gt;</content:encoded></item></channel></rss>
