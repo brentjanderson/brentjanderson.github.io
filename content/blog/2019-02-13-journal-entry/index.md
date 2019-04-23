@@ -1,7 +1,7 @@
 ---
 title: When you write a script that you didn't need
-date: '2018-10-12T00:00:00.000Z'
-draft: false
+date: '2018-02-13T00:00:00.000Z'
+draft: true
 category: 'Journal'
 tags:
 description: 'What happens when exploring requirements brings you back to square one?'

@@ -1,3 +1,15 @@
+---
+title: Event Sourcing for Beginners
+date: '2018-10-12T00:00:00.000Z'
+draft: true
+category: 'Tech Topics'
+tags:
+  - 'Event Sourcing'
+  - 'DDD'
+  - 'Software Engineering'
+description: 'An essay on an alternative approach to managing data in complex applications'
+---
+
 # Event sourcing a la Postgres
 BEGIN TRANSACTION
 1. User connect, calls domain stored procedure
