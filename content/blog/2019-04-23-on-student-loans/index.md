@@ -26,6 +26,6 @@ Those funding the education are not necessarily the recipients of the education 
 
 * Love and care for the student (friends, family, or the student themselves)
 * Love and care for society (e.g. those who fund scholarships)
-* Profit motive (e.g. financing like student loans) 
+* Profit motive (e.g. financing like student loans)
 
-The first two motives do not generally replenish themselves, and are thus non-perpetuating. 
+The first two motives do not generally replenish themselves, and are thus non-perpetuating.
