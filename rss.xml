@@ -1,5 +1,61 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brent Anderson]]></title><description><![CDATA[Brent Anderson's musings]]></description><link>https://www.brentjanderson.com</link><generator>RSS for Node</generator><lastBuildDate>Tue, 23 Apr 2019 22:57:06 GMT</lastBuildDate><item><title><![CDATA[How I Postgres]]></title><description><![CDATA[At  Lambda School , we love postgres. Here are a few gems I've learned that make
-developing with it a joy: PSQL for Mac The best way to…]]></description><link>https://www.brentjanderson.com/blog/2018-04-23-how-i-postgres/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2018-04-23-how-i-postgres/</guid><pubDate>Tue, 23 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;At &lt;a href=&quot;https://lambdaschool.com/&quot;&gt;Lambda School&lt;/a&gt;, we love postgres. Here are a few gems I&apos;ve learned that make
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brent Anderson's RSS Feed]]></title><description><![CDATA[Brent Anderson's musings]]></description><link>https://www.brentjanderson.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 02 Jun 2020 03:57:34 GMT</lastBuildDate><item><title><![CDATA[Our Pebble]]></title><description><![CDATA[Lost for words
+Our voice feels small
+What pebble can we toss in
+That will matter at all? But if we don’t toss it in,
+Will anyone know
+We…]]></description><link>https://www.brentjanderson.com/blog/2020-06-01-our-pebble/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2020-06-01-our-pebble/</guid><pubDate>Mon, 01 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Lost for words
+Our voice feels small
+What pebble can we toss in
+That will matter at all?&lt;/p&gt;
+&lt;p&gt;But if we don’t toss it in,
+Will anyone know
+We stand on the banks
+And not just for show?&lt;/p&gt;
+&lt;p&gt;It’s not really standing
+we came here to do
+We came here to kneel,
+And maybe plead too.&lt;/p&gt;
+&lt;p&gt;Really, how can we expect
+To kneel before our Maker
+if we procrastinate solidarity
+with our human family until later?&lt;/p&gt;
+&lt;p&gt;We came here to kneel -
+Not on the backs of the “others”
+Rather, to kneel hand in hand
+With our parents, sisters &amp;#x26; brothers&lt;/p&gt;
+&lt;p&gt;When we look our Maker in the eyes
+Will we mask our face in shame?
+Or will He look in our eyes because
+we’re masked for someone unnamed?&lt;/p&gt;
+&lt;p&gt;While we sit in our home
+A bubble away from chaos
+We’re privileged to breathe
+With a mask without loss&lt;/p&gt;
+&lt;p&gt;So as we stand on the banks
+With pebble in hand
+We may not know how to jump in
+But we seek to understand&lt;/p&gt;
+&lt;p&gt;We don’t care to go back to “normal”
+When all this is through
+We want to get right back up
+And start things anew&lt;/p&gt;
+&lt;p&gt;A new strength in families
+unity and equality for each
+Actual respect and sincere care
+A consistent habit of outreach&lt;/p&gt;
+&lt;p&gt;Wet from the baptism of a virus,
+the ashes and flame
+We know in the end
+Things can’t stay the same&lt;/p&gt;
+&lt;p&gt;We know we will stumble
+As we try with our might
+But better to try
+Than to hide from the light.&lt;/p&gt;
+&lt;p&gt;People need love and
+Families need a stand,
+But that ripple won’t happen
+If it stays in our hand.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[How I Postgres]]></title><description><![CDATA[At Lambda School, we love postgres. Here are a few gems I've learned that make
+developing with it a joy: PSQL for Mac The best way to handle…]]></description><link>https://www.brentjanderson.com/blog/2019-04-23-how-i-postgres/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2019-04-23-how-i-postgres/</guid><pubDate>Tue, 23 Apr 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;At &lt;a href=&quot;https://lambdaschool.com/&quot;&gt;Lambda School&lt;/a&gt;, we love postgres. Here are a few gems I&apos;ve learned that make
 developing with it a joy:&lt;/p&gt;
 &lt;h2&gt;PSQL for Mac&lt;/h2&gt;
 &lt;p&gt;The best way to handle this is to install
@@ -80,16 +136,16 @@ is as easy as changing the variable on the command line.&lt;/p&gt;
 &lt;h2&gt;Running a Postgres database locally&lt;/h2&gt;
 &lt;p&gt;You can use &lt;a href=&quot;https://postgresapp.com/&quot;&gt;Postgres.app&lt;/a&gt; to setup and manage different versions of Postgres
 on your mac. At &lt;a href=&quot;https://lambdaschool.com/&quot;&gt;Lambda School&lt;/a&gt; we use Docker to set up local
-dependencies (and I generally prefer using Docker to Postgres.app).&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Resilience and Tolerance]]></title><description><![CDATA[From  https://seths.blog/2019/03/resilience-and-tolerances/ You’ll probably find that while precision feels like the way forward, resilience…]]></description><link>https://www.brentjanderson.com/blog/2019-03-18-resilience-and-tolerance/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2019-03-18-resilience-and-tolerance/</guid><pubDate>Mon, 18 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;From &lt;a href=&quot;https://seths.blog/2019/03/resilience-and-tolerances/&quot;&gt;https://seths.blog/2019/03/resilience-and-tolerances/&lt;/a&gt;&lt;/p&gt;
+dependencies (and I generally prefer using Docker to Postgres.app).&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Resilience and Tolerance]]></title><description><![CDATA[From https://seths.blog/2019/03/resilience-and-tolerances/ You’ll probably find that while precision feels like the way forward, resilience…]]></description><link>https://www.brentjanderson.com/blog/2019-03-18-resilience-and-tolerance/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2019-03-18-resilience-and-tolerance/</guid><pubDate>Mon, 18 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;From &lt;a href=&quot;https://seths.blog/2019/03/resilience-and-tolerances/&quot;&gt;https://seths.blog/2019/03/resilience-and-tolerances/&lt;/a&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;You’ll probably find that while precision feels like the way forward, resilience, the ability to thrive when things go wrong, is a much safer bet.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;Although Seth is famous for writing about marketing, his writing reflects truth. The truths he writes about apply broadly.&lt;/p&gt;
 &lt;p&gt;Reading this reminds me of the best literature in engineering reliable software systems. The pattern that seems to be most powerful is to declare how things ought to be, and to have a machine that is responsible for herding what it observes in your system towards what you said it&apos;s supposed to be. Kubernetes manifests come to mind in particular.&lt;/p&gt;
 &lt;p&gt;Having strong precision is important because it can help clean up a lot of the messes before you get it out into the real world. Type systems, static analysis, test coverage, and other pre-flight checks help rule out classes of problems that you would otherwise have to build resilience for.&lt;/p&gt;
-&lt;p&gt;From there, we can focus on resilience. Resilience requires understanding other patterns. Systems thinking, embracing failure rather than insulating it, setting and enforcing clear expectations between system components. Resilience requires having a clean path to shut things down, and a clean path to start things up. If you can reboot something into a known stable state and then move forward, you are far more resilient and ant-fragile.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Typescript FTW]]></title><description><![CDATA[Today, I've decided that I prefer Typescript to Javascript. I think it offers great features and protection without the hassle of an overly…]]></description><link>https://www.brentjanderson.com/blog/2019-03-04-typescript-ftw/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2019-03-04-typescript-ftw/</guid><pubDate>Mon, 04 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today, I&apos;ve decided that I prefer Typescript to Javascript. I think it offers great features and protection without the hassle of an overly prescriptive strongly-type langauge, and it has made writing software for Lambda School much more effective.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Notes on "How to Read"]]></title><description><![CDATA[These are some unstructured notes from a  free video  published by
- Farnam Street  on how to read. These notes are just a loose
-collection…]]></description><link>https://www.brentjanderson.com/blog/2019-01-7-how-to-read-notes/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2019-01-7-how-to-read-notes/</guid><pubDate>Mon, 07 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;These are some unstructured notes from a &lt;a href=&quot;https://fs.blog/the-art-of-reading-sneak-peek-module-4-video/&quot; title=&quot;Video Course&quot;&gt;free video&lt;/a&gt; published by
+&lt;p&gt;From there, we can focus on resilience. Resilience requires understanding other patterns. Systems thinking, embracing failure rather than insulating it, setting and enforcing clear expectations between system components. Resilience requires having a clean path to shut things down, and a clean path to start things up. If you can reboot something into a known stable state and then move forward, you are far more resilient and ant-fragile.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Typescript FTW]]></title><description><![CDATA[Today, I've decided that I prefer Typescript to Javascript. I think it offers great features and protection without the hassle of an overly…]]></description><link>https://www.brentjanderson.com/blog/2019-03-04-typescript-ftw/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2019-03-04-typescript-ftw/</guid><pubDate>Mon, 04 Mar 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Today, I&apos;ve decided that I prefer Typescript to Javascript. I think it offers great features and protection without the hassle of an overly prescriptive strongly-type langauge, and it has made writing software for Lambda School much more effective.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Notes on "How to Read"]]></title><description><![CDATA[These are some unstructured notes from a free video published by
+Farnam Street on how to read. These notes are just a loose
+collection, so…]]></description><link>https://www.brentjanderson.com/blog/2019-01-7-how-to-read-notes/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2019-01-7-how-to-read-notes/</guid><pubDate>Mon, 07 Jan 2019 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;These are some unstructured notes from a &lt;a href=&quot;https://fs.blog/the-art-of-reading-sneak-peek-module-4-video/&quot; title=&quot;Video Course&quot;&gt;free video&lt;/a&gt; published by
 &lt;a href=&quot;https://fs.blog&quot; title=&quot;Farnam Street&quot;&gt;Farnam Street&lt;/a&gt; on how to read. These notes are just a loose
 collection, so don&apos;t take them as definitive or even complete, but they seemed
 useful.&lt;/p&gt;
@@ -234,7 +290,7 @@ server=208.67.220.220
 &lt;li&gt;uBlock Origin&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;Other details&lt;/h2&gt;
-&lt;p&gt;I will update this with further details, but for now this is the base setup I prefer to use on my system.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Tim Cook on Privacy]]></title><description><![CDATA[I recently read Tim Cook's inspiring remarks on privacy. If you haven't read it yet, I encourage you to  check it out . As I have reflected…]]></description><link>https://www.brentjanderson.com/blog/2018-10-24-tim-cook-privacy/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2018-10-24-tim-cook-privacy/</guid><pubDate>Wed, 24 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I recently read Tim Cook&apos;s inspiring remarks on privacy. If you haven&apos;t read it yet, I encourage you to &lt;a href=&quot;https://www.privacyconference2018.org/system/files/2018-10/Tim%20Cook%20speech%20-%20ICDPPC2018.pdf&quot;&gt;check it out&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I will update this with further details, but for now this is the base setup I prefer to use on my system.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Tim Cook on Privacy]]></title><description><![CDATA[I recently read Tim Cook's inspiring remarks on privacy. If you haven't read it yet, I encourage you to check it out. As I have reflected on…]]></description><link>https://www.brentjanderson.com/blog/2018-10-24-tim-cook-privacy/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2018-10-24-tim-cook-privacy/</guid><pubDate>Wed, 24 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;I recently read Tim Cook&apos;s inspiring remarks on privacy. If you haven&apos;t read it yet, I encourage you to &lt;a href=&quot;https://www.privacyconference2018.org/system/files/2018-10/Tim%20Cook%20speech%20-%20ICDPPC2018.pdf&quot;&gt;check it out&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;As I have reflected on his message, one thing stood out: Technology must be infused with our humanity. That requires human commitment to that ideal. Technology can&apos;t put humanity into itself: That is our unique human responsibility.&lt;/p&gt;
 &lt;p&gt;We could say Technology is indifferent. The truth is, it&apos;s not anything. It doesn&apos;t care. When we say that an algorithm is biased, the truth is that the way it was implemented was biased. The brick of aluminum and glass in your hand It doesn&apos;t care if it&apos;s been recharged recently, or what you share on the internet. To the machines involved, the pictures and words we share on the internet (including this blog post) look the same as an Amazon order or an advertisement. There is no inherent meaning to them from the machine&apos;s point of view.&lt;/p&gt;
 &lt;p&gt;In its darkest forms, the systematic aggregation of data is quietly shaping our lives. From the ads we see to the decisions we make, we are subtly controlled by powerful algorithms that are seeking to shape our behavior. Most of the time, this influence is intended to be innocuous. &quot;Advertising helps the economy.&quot; &quot;We want the world to be more open and connected.&quot; Surely there is some value to these claims, but the aggregation of the data and the behavior is creating a complex soup of interactions that none of us can fully comprehend. It is impossible to tease apart.&lt;/p&gt;
@@ -273,7 +329,7 @@ server=208.67.220.220
 &lt;blockquote&gt;
 &lt;p&gt;&quot;Privacy means people know what they&apos;re signing up for, in plain language, and repeatedly.&quot; ~ Steve Jobs&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Thank you, Tim (and Steve), for taking this kind of a stand for privacy and human rights.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[The problem with Firebase]]></title><description><![CDATA[We use  Firebase  at  Yours.co  for our entire backend. Our app depends upon cloud functions, datastore, push notifications and more…]]></description><link>https://www.brentjanderson.com/blog/2018-10-15-firebase-problem/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2018-10-15-firebase-problem/</guid><pubDate>Mon, 15 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;
+&lt;p&gt;Thank you, Tim (and Steve), for taking this kind of a stand for privacy and human rights.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[The problem with Firebase]]></title><description><![CDATA[We use Firebase at Yours.co for our entire backend. Our app depends upon cloud functions, datastore, push notifications and more. Firebase…]]></description><link>https://www.brentjanderson.com/blog/2018-10-15-firebase-problem/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2018-10-15-firebase-problem/</guid><pubDate>Mon, 15 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;
   &lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
   
   &lt;span
@@ -282,20 +338,20 @@ server=208.67.220.220
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAgP/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAZ7MnY0cCb//xAAaEAEAAgMBAAAAAAAAAAAAAAABAAIDERMi/9oACAEBAAEFAjIQ9CaZW9qzqs//xAAYEQACAwAAAAAAAAAAAAAAAAAAAREhQf/aAAgBAwEBPwFRpR//xAAYEQACAwAAAAAAAAAAAAAAAAAAAQIhQf/aAAgBAgEBPwFuWFn/xAAXEAEBAQEAAAAAAAAAAAAAAAAAIQEQ/9oACAEBAAY/Ak7NV//EABgQAQEBAQEAAAAAAAAAAAAAAAEAESEx/9oACAEBAAE/Ic/jDuHGdxiR1iVbhb//2gAMAwEAAgADAAAAENwP/8QAFxEBAQEBAAAAAAAAAAAAAAAAAQAhEf/aAAgBAwEBPxAlxL3l/8QAFxEAAwEAAAAAAAAAAAAAAAAAAAEhEf/aAAgBAgEBPxDFQpp//8QAHBAAAgICAwAAAAAAAAAAAAAAAREAITFBUWGR/9oACAEBAAE/EF5LtiqhRaQKjwmIdRg70a8ik8vE/9k=&apos;); background-size: cover; display: block;&quot;
+      style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAgP/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAZ7MnY0cCb//xAAaEAEAAgMBAAAAAAAAAAAAAAABAAIDERMi/9oACAEBAAEFAjIQ9CaZW9qzqs//xAAYEQACAwAAAAAAAAAAAAAAAAAAAREhQf/aAAgBAwEBPwFRpR//xAAYEQACAwAAAAAAAAAAAAAAAAAAAQIhQf/aAAgBAgEBPwFuWFn/xAAXEAEBAQEAAAAAAAAAAAAAAAAAIQEQ/9oACAEBAAY/Ak7NV//EABcQAQEBAQAAAAAAAAAAAAAAAAEAETH/2gAIAQEAAT8hz8YO4cZ3GJHWJVuFv//aAAwDAQACAAMAAAAQ3A//xAAXEQEBAQEAAAAAAAAAAAAAAAABACER/9oACAEDAQE/ECXEveX/xAAXEQADAQAAAAAAAAAAAAAAAAAAASER/9oACAECAQE/EMVCmn//xAAcEAACAgIDAAAAAAAAAAAAAAABEQAhMUFRYZH/2gAIAQEAAT8QXku2KqBWkCo8JiHUYO9GvIpPLxP/2Q==&apos;); background-size: cover; display: block;&quot;
     &gt;
       &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;fire.jpg&quot;
         title=&quot;Photo by https://unsplash.com/photos/HCCJgI4YwbQ&quot;
-        src=&quot;/static/2047286e866179e69fc2e847d584d29f/1ef49/fire.jpg&quot;
-        srcset=&quot;/static/2047286e866179e69fc2e847d584d29f/338d2/fire.jpg 275w,
-/static/2047286e866179e69fc2e847d584d29f/48316/fire.jpg 550w,
-/static/2047286e866179e69fc2e847d584d29f/1ef49/fire.jpg 1100w,
-/static/2047286e866179e69fc2e847d584d29f/b1122/fire.jpg 1650w,
-/static/2047286e866179e69fc2e847d584d29f/7db3f/fire.jpg 2200w,
-/static/2047286e866179e69fc2e847d584d29f/1ac66/fire.jpg 3000w&quot;
+        src=&quot;/static/2047286e866179e69fc2e847d584d29f/8e444/fire.jpg&quot;
+        srcset=&quot;/static/2047286e866179e69fc2e847d584d29f/e5c05/fire.jpg 275w,
+/static/2047286e866179e69fc2e847d584d29f/c603d/fire.jpg 550w,
+/static/2047286e866179e69fc2e847d584d29f/8e444/fire.jpg 1100w,
+/static/2047286e866179e69fc2e847d584d29f/a2cbd/fire.jpg 1650w,
+/static/2047286e866179e69fc2e847d584d29f/074ca/fire.jpg 2200w,
+/static/2047286e866179e69fc2e847d584d29f/2d501/fire.jpg 3000w&quot;
         sizes=&quot;(max-width: 1100px) 100vw, 1100px&quot;
       /&gt;
     &lt;/span&gt;
@@ -382,21 +438,20 @@ server=208.67.220.220
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 66.82480515079634%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAD/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAEGidbkUqP/xAAaEAACAgMAAAAAAAAAAAAAAAAAAQISERMx/9oACAEBAAEFAuFSmRQTWscD/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFhABAQEAAAAAAAAAAAAAAAAAEDEA/9oACAEBAAY/Ait3/8QAHBAAAgICAwAAAAAAAAAAAAAAAAERITFBUXGB/9oACAEBAAE/IVDLRTzhZJ2pOhImxIsO+hk5n//aAAwDAQACAAMAAAAQnD//xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAwEBPxCn/8QAFREBAQAAAAAAAAAAAAAAAAAAEBH/2gAIAQIBAT8Qh//EABsQAQADAQEBAQAAAAAAAAAAAAEAESExcVGh/9oACAEBAAE/EKgNjSsp+wIUQtbor3s4b7WUr8i9s7pl7NmkPdMsc/An/9k=&apos;); background-size: cover; display: block;&quot;
+      style=&quot;padding-bottom: 66.82480515079634%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAD/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAEGidbkUqP/xAAaEAACAgMAAAAAAAAAAAAAAAAAAQISERMx/9oACAEBAAEFAuFSmRQTWscD/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFhABAQEAAAAAAAAAAAAAAAAAEDEA/9oACAEBAAY/Ait3/8QAHBAAAgICAwAAAAAAAAAAAAAAAAERITFBUYGh/9oACAEBAAE/IVDLRTrhZJ2pOhImxIsPwZOZ/9oADAMBAAIAAwAAABCcP//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAEDAQE/EKf/xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPxCH/8QAGxABAAMBAQEBAAAAAAAAAAAAAQARITFxUaH/2gAIAQEAAT8QqA2NKyn7AhRC1uivezhvtZSvyL2zumXrNmlHumWOfgT/2Q==&apos;); background-size: cover; display: block;&quot;
     &gt;
       &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;cockpit.jpg&quot;
         title=&quot;Image by https://unsplash.com/@dlohmar&quot;
-        src=&quot;/static/5f7d82f806c734be8c0510f05d2f7e45/1ef49/cockpit.jpg&quot;
-        srcset=&quot;/static/5f7d82f806c734be8c0510f05d2f7e45/338d2/cockpit.jpg 275w,
-/static/5f7d82f806c734be8c0510f05d2f7e45/48316/cockpit.jpg 550w,
-/static/5f7d82f806c734be8c0510f05d2f7e45/1ef49/cockpit.jpg 1100w,
-/static/5f7d82f806c734be8c0510f05d2f7e45/b1122/cockpit.jpg 1650w,
-/static/5f7d82f806c734be8c0510f05d2f7e45/7db3f/cockpit.jpg 2200w,
-/static/5f7d82f806c734be8c0510f05d2f7e45/5ebf8/cockpit.jpg 3300w,
-/static/5f7d82f806c734be8c0510f05d2f7e45/9ba42/cockpit.jpg 5902w&quot;
+        src=&quot;/static/5f7d82f806c734be8c0510f05d2f7e45/8e444/cockpit.jpg&quot;
+        srcset=&quot;/static/5f7d82f806c734be8c0510f05d2f7e45/e5c05/cockpit.jpg 275w,
+/static/5f7d82f806c734be8c0510f05d2f7e45/c603d/cockpit.jpg 550w,
+/static/5f7d82f806c734be8c0510f05d2f7e45/8e444/cockpit.jpg 1100w,
+/static/5f7d82f806c734be8c0510f05d2f7e45/a2cbd/cockpit.jpg 1650w,
+/static/5f7d82f806c734be8c0510f05d2f7e45/074ca/cockpit.jpg 2200w,
+/static/5f7d82f806c734be8c0510f05d2f7e45/f7c43/cockpit.jpg 5902w&quot;
         sizes=&quot;(max-width: 1100px) 100vw, 1100px&quot;
       /&gt;
     &lt;/span&gt;
