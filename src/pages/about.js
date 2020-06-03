@@ -32,7 +32,7 @@ const links = [
   </a>
 ))
 
-const AboutPage = data => {
+const AboutPage = (data) => {
   console.log(data)
   return (
     <Layout>
@@ -64,6 +64,7 @@ const AboutPage = data => {
               class="embeddable-buttondown-form"
             >
               <small>
+                {/* eslint-disable jsx-a11y/control-has-associated-label */}
                 <input
                   type="email"
                   name="email"
@@ -72,6 +73,7 @@ const AboutPage = data => {
                 />
                 <input type="hidden" value="1" name="embed" />
                 <input type="submit" value="Subscribe" />
+                {/* eslint-enable jsx-a11y/control-has-associated-label */}
                 <p>
                   <a
                     href="https://buttondown.email"
@@ -116,10 +118,13 @@ const AboutPage = data => {
             </p>
 
             <p>
-              By day I'm a full-stack engineer at <a href="https://lambdaschool.com">Lambda School</a>. By night, I'm a dad,
-              husband, <a href="https://churchofjesuschrist.org">Latter-day Saint</a>, and
-              co-founder at <a href="https://coriaria.com">Coriaria</a> where we
-              develop products and services that strengthen homes and families.
+              By day I'm a full-stack engineer at{' '}
+              <a href="https://lambdaschool.com">Lambda School</a>. By night,
+              I'm a dad, husband,{' '}
+              <a href="https://churchofjesuschrist.org">Latter-day Saint</a>,
+              and co-founder at <a href="https://coriaria.com">Coriaria</a>{' '}
+              where we develop products and services that strengthen homes and
+              families.
             </p>
 
             <p>
@@ -131,9 +136,9 @@ const AboutPage = data => {
 
             <p>
               As an engineer, I specialize in full-stack web and mobile
-              applications engineering using React & React Native, Postgres, iOS/Swift,
-              Elixir, and NodeJS. I also help teams build the best process for
-              rapid innovation across the stack.
+              applications engineering using React & React Native, Postgres,
+              iOS/Swift, Elixir, and NodeJS. I also help teams build the best
+              process for rapid innovation across the stack.
             </p>
 
             <p>My playbook is simple:</p>
