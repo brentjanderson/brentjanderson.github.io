@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brent Anderson's RSS Feed]]></title><description><![CDATA[Brent Anderson's musings]]></description><link>https://www.brentjanderson.com</link><generator>GatsbyJS</generator><lastBuildDate>Tue, 02 Jun 2020 04:00:44 GMT</lastBuildDate><item><title><![CDATA[Our Pebble]]></title><description><![CDATA[Lost for words Our voice feels small What pebble can we toss in That will matter at all? But if we don’t toss it in, Will anyone know We…]]></description><link>https://www.brentjanderson.com/blog/2020-06-01-our-pebble/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2020-06-01-our-pebble/</guid><pubDate>Mon, 01 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Lost for words&lt;br&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Brent Anderson's RSS Feed]]></title><description><![CDATA[Brent Anderson's musings]]></description><link>https://www.brentjanderson.com</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 30 Apr 2021 04:51:02 GMT</lastBuildDate><item><title><![CDATA[Our Pebble]]></title><description><![CDATA[Lost for words Our voice feels small What pebble can we toss in That will matter at all? But if we don’t toss it in, Will anyone know We…]]></description><link>https://www.brentjanderson.com/blog/2020-06-01-our-pebble/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2020-06-01-our-pebble/</guid><pubDate>Mon, 01 Jun 2020 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Lost for words&lt;br&gt;
 Our voice feels small&lt;br&gt;
 What pebble can we toss in&lt;br&gt;
 That will matter at all?&lt;/p&gt;
@@ -324,37 +324,33 @@ server=208.67.220.220
 &lt;blockquote&gt;
 &lt;p&gt;&quot;Privacy means people know what they&apos;re signing up for, in plain language, and repeatedly.&quot; ~ Steve Jobs&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;Thank you, Tim (and Steve), for taking this kind of a stand for privacy and human rights.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[The problem with Firebase]]></title><description><![CDATA[We use Firebase at Yours.co for our entire backend. Our app depends upon cloud functions, datastore, push notifications and more. Firebase…]]></description><link>https://www.brentjanderson.com/blog/2018-10-15-firebase-problem/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2018-10-15-firebase-problem/</guid><pubDate>Mon, 15 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;
-  &lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 1100px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
+&lt;p&gt;Thank you, Tim (and Steve), for taking this kind of a stand for privacy and human rights.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[The problem with Firebase]]></title><description><![CDATA[We use Firebase at Yours.co for our entire backend. Our app depends upon cloud functions, datastore, push notifications and more. Firebase…]]></description><link>https://www.brentjanderson.com/blog/2018-10-15-firebase-problem/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2018-10-15-firebase-problem/</guid><pubDate>Mon, 15 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
     &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 66.66666666666666%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAgP/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAZ7MnY0cCb//xAAaEAEAAgMBAAAAAAAAAAAAAAABAAIDERMi/9oACAEBAAEFAjIQ9CaZW9qzqs//xAAYEQACAwAAAAAAAAAAAAAAAAAAAREhQf/aAAgBAwEBPwFRpR//xAAYEQACAwAAAAAAAAAAAAAAAAAAAQIhQf/aAAgBAgEBPwFuWFn/xAAXEAEBAQEAAAAAAAAAAAAAAAAAIQEQ/9oACAEBAAY/Ak7NV//EABcQAQEBAQAAAAAAAAAAAAAAAAEAETH/2gAIAQEAAT8hz8YO4cZ3GJHWJVuFv//aAAwDAQACAAMAAAAQ3A//xAAXEQEBAQEAAAAAAAAAAAAAAAABACER/9oACAEDAQE/ECXEveX/xAAXEQADAQAAAAAAAAAAAAAAAAAAASER/9oACAECAQE/EMVCmn//xAAcEAACAgIDAAAAAAAAAAAAAAABEQAhMUFRYZH/2gAIAQEAAT8QXku2KqBWkCo8JiHUYO9GvIpPLxP/2Q==&apos;); background-size: cover; display: block;&quot;
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1100px; &quot;
     &gt;
-      &lt;img
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 66.54545454545455%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAgP/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAZ7MnY0cCb//xAAaEAEAAgMBAAAAAAAAAAAAAAABAAIDERMi/9oACAEBAAEFAjIQ9CaZW9qzqs//xAAYEQACAwAAAAAAAAAAAAAAAAAAAREhQf/aAAgBAwEBPwFRpR//xAAYEQACAwAAAAAAAAAAAAAAAAAAAQIhQf/aAAgBAgEBPwFuWFn/xAAXEAEBAQEAAAAAAAAAAAAAAAAAIQEQ/9oACAEBAAY/Ak7NV//EABcQAQEBAQAAAAAAAAAAAAAAAAEAETH/2gAIAQEAAT8hz8YO4cZ3GJHWJVuFv//aAAwDAQACAAMAAAAQ3A//xAAXEQEBAQEAAAAAAAAAAAAAAAABACER/9oACAEDAQE/ECXEveX/xAAXEQADAQAAAAAAAAAAAAAAAAAAASER/9oACAECAQE/EMVCmn//xAAcEAACAgIDAAAAAAAAAAAAAAABEQAhMUFRYZH/2gAIAQEAAT8QXku2KqBWkCo8JiHUYO9GvIpPLxP/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;fire.jpg&quot;
         title=&quot;Photo by https://unsplash.com/photos/HCCJgI4YwbQ&quot;
-        src=&quot;/static/2047286e866179e69fc2e847d584d29f/8e444/fire.jpg&quot;
-        srcset=&quot;/static/2047286e866179e69fc2e847d584d29f/e5c05/fire.jpg 275w,
-/static/2047286e866179e69fc2e847d584d29f/c603d/fire.jpg 550w,
-/static/2047286e866179e69fc2e847d584d29f/8e444/fire.jpg 1100w,
-/static/2047286e866179e69fc2e847d584d29f/a2cbd/fire.jpg 1650w,
-/static/2047286e866179e69fc2e847d584d29f/074ca/fire.jpg 2200w,
-/static/2047286e866179e69fc2e847d584d29f/2d501/fire.jpg 3000w&quot;
+        src=&quot;/static/2047286e866179e69fc2e847d584d29f/ddced/fire.jpg&quot;
+        srcset=&quot;/static/2047286e866179e69fc2e847d584d29f/35f54/fire.jpg 275w,
+/static/2047286e866179e69fc2e847d584d29f/d7854/fire.jpg 550w,
+/static/2047286e866179e69fc2e847d584d29f/ddced/fire.jpg 1100w,
+/static/2047286e866179e69fc2e847d584d29f/670dc/fire.jpg 1650w,
+/static/2047286e866179e69fc2e847d584d29f/a40a7/fire.jpg 2200w,
+/static/2047286e866179e69fc2e847d584d29f/12609/fire.jpg 3000w&quot;
         sizes=&quot;(max-width: 1100px) 100vw, 1100px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Photo by https://unsplash.com/photos/HCCJgI4YwbQ&lt;/figcaption&gt;
-  &lt;/figure&gt;
-      &lt;/p&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Photo by https://unsplash.com/photos/HCCJgI4YwbQ&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;We use &lt;a href=&quot;https://www.firebase.com&quot;&gt;Firebase&lt;/a&gt; at &lt;a href=&quot;https://yours.co&quot;&gt;Yours.co&lt;/a&gt; for our entire backend. Our app depends upon cloud functions, datastore, push notifications and more.&lt;/p&gt;
 &lt;p&gt;Firebase is well-suited to certain types of real-time applications. But, sometimes people ask me &quot;Should I use Firebase?&quot; Here are my open thoughts on Firebase&apos;s products and how they fit into a product&apos;s strategy.&lt;/p&gt;
 &lt;h2&gt;A few caveats&lt;/h2&gt;
@@ -424,37 +420,33 @@ server=208.67.220.220
 &lt;/ul&gt;
 &lt;h2&gt;Footnotes&lt;/h2&gt;
 &lt;p&gt;&lt;a name=&quot;footnote1&quot; href=&quot;#sup1&quot;&gt;1&lt;/a&gt;: I have not used Firebase Firestore yet (it&apos;s still in beta), but it doesn&apos;t seem to include relational indices either.
-&lt;a name=&quot;footnote2&quot; href=&quot;#sup2&quot;&gt;2&lt;/a&gt;: I have tried Apollo Server. If you want cutting-edge features or are all-in on Node, it&apos;s a good option. I find Absinthe is elegant and declarative. Elixir and Phoenix handle realtime subscriptions well too.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Event Sourcing for Beginners]]></title><description><![CDATA[Note: This article is still a draft, hence the blank sections at the bottom. Thanks for stopping by either way! I am fascinated by pushing…]]></description><link>https://www.brentjanderson.com/blog/2018-10-08-event-sourcing/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2018-10-08-event-sourcing/</guid><pubDate>Fri, 12 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;
-  &lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
-  
-  &lt;span
-    class=&quot;gatsby-resp-image-wrapper&quot;
-    style=&quot;position: relative; display: block;  max-width: 1100px; margin-left: auto; margin-right: auto;&quot;
-  &gt;
+&lt;a name=&quot;footnote2&quot; href=&quot;#sup2&quot;&gt;2&lt;/a&gt;: I have tried Apollo Server. If you want cutting-edge features or are all-in on Node, it&apos;s a good option. I find Absinthe is elegant and declarative. Elixir and Phoenix handle realtime subscriptions well too.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Event Sourcing for Beginners]]></title><description><![CDATA[Note: This article is still a draft, hence the blank sections at the bottom. Thanks for stopping by either way! I am fascinated by pushing…]]></description><link>https://www.brentjanderson.com/blog/2018-10-08-event-sourcing/</link><guid isPermaLink="false">https://www.brentjanderson.com/blog/2018-10-08-event-sourcing/</guid><pubDate>Fri, 12 Oct 2018 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;&lt;figure class=&quot;gatsby-resp-image-figure&quot; style=&quot;&quot;&gt;
     &lt;span
-      class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 66.82480515079634%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAD/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAEGidbkUqP/xAAaEAACAgMAAAAAAAAAAAAAAAAAAQISERMx/9oACAEBAAEFAuFSmRQTWscD/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFhABAQEAAAAAAAAAAAAAAAAAEDEA/9oACAEBAAY/Ait3/8QAHBAAAgICAwAAAAAAAAAAAAAAAAERITFBUYGh/9oACAEBAAE/IVDLRTrhZJ2pOhImxIsPwZOZ/9oADAMBAAIAAwAAABCcP//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAEDAQE/EKf/xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPxCH/8QAGxABAAMBAQEBAAAAAAAAAAAAAQARITFxUaH/2gAIAQEAAT8QqA2NKyn7AhRC1uivezhvtZSvyL2zumXrNmlHumWOfgT/2Q==&apos;); background-size: cover; display: block;&quot;
+      class=&quot;gatsby-resp-image-wrapper&quot;
+      style=&quot;position: relative; display: block; margin-left: auto; margin-right: auto; max-width: 1100px; &quot;
     &gt;
-      &lt;img
+      &lt;span
+    class=&quot;gatsby-resp-image-background-image&quot;
+    style=&quot;padding-bottom: 66.9090909090909%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABAAD/8QAFgEBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAEGidbkUqP/xAAaEAACAgMAAAAAAAAAAAAAAAAAAQISERMx/9oACAEBAAEFAuFSmRQTWscD/8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAwEBPwE//8QAFBEBAAAAAAAAAAAAAAAAAAAAEP/aAAgBAgEBPwE//8QAFhABAQEAAAAAAAAAAAAAAAAAEDEA/9oACAEBAAY/Ait3/8QAHBAAAgICAwAAAAAAAAAAAAAAAAERITFBUYGh/9oACAEBAAE/IVDLRTrhZJ2pOhImxIsPwZOZ/9oADAMBAAIAAwAAABCcP//EABURAQEAAAAAAAAAAAAAAAAAABAR/9oACAEDAQE/EKf/xAAVEQEBAAAAAAAAAAAAAAAAAAAQEf/aAAgBAgEBPxCH/8QAGxABAAMBAQEBAAAAAAAAAAAAAQARITFxUaH/2gAIAQEAAT8QqA2NKyn7AhRC1uivezhvtZSvyL2zumXrNmlHumWOfgT/2Q==&apos;); background-size: cover; display: block;&quot;
+  &gt;&lt;/span&gt;
+  &lt;img
         class=&quot;gatsby-resp-image-image&quot;
-        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
         alt=&quot;cockpit.jpg&quot;
         title=&quot;Image by https://unsplash.com/@dlohmar&quot;
-        src=&quot;/static/5f7d82f806c734be8c0510f05d2f7e45/8e444/cockpit.jpg&quot;
-        srcset=&quot;/static/5f7d82f806c734be8c0510f05d2f7e45/e5c05/cockpit.jpg 275w,
-/static/5f7d82f806c734be8c0510f05d2f7e45/c603d/cockpit.jpg 550w,
-/static/5f7d82f806c734be8c0510f05d2f7e45/8e444/cockpit.jpg 1100w,
-/static/5f7d82f806c734be8c0510f05d2f7e45/a2cbd/cockpit.jpg 1650w,
-/static/5f7d82f806c734be8c0510f05d2f7e45/074ca/cockpit.jpg 2200w,
-/static/5f7d82f806c734be8c0510f05d2f7e45/f7c43/cockpit.jpg 5902w&quot;
+        src=&quot;/static/5f7d82f806c734be8c0510f05d2f7e45/ddced/cockpit.jpg&quot;
+        srcset=&quot;/static/5f7d82f806c734be8c0510f05d2f7e45/35f54/cockpit.jpg 275w,
+/static/5f7d82f806c734be8c0510f05d2f7e45/d7854/cockpit.jpg 550w,
+/static/5f7d82f806c734be8c0510f05d2f7e45/ddced/cockpit.jpg 1100w,
+/static/5f7d82f806c734be8c0510f05d2f7e45/670dc/cockpit.jpg 1650w,
+/static/5f7d82f806c734be8c0510f05d2f7e45/a40a7/cockpit.jpg 2200w,
+/static/5f7d82f806c734be8c0510f05d2f7e45/76d7a/cockpit.jpg 5902w&quot;
         sizes=&quot;(max-width: 1100px) 100vw, 1100px&quot;
+        style=&quot;width:100%;height:100%;margin:0;vertical-align:middle;position:absolute;top:0;left:0;&quot;
+        loading=&quot;lazy&quot;
       /&gt;
     &lt;/span&gt;
-  &lt;/span&gt;
-  
-  &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Image by https://unsplash.com/@dlohmar&lt;/figcaption&gt;
-  &lt;/figure&gt;
-      &lt;/p&gt;
+    &lt;figcaption class=&quot;gatsby-resp-image-figcaption&quot;&gt;Image by https://unsplash.com/@dlohmar&lt;/figcaption&gt;
+  &lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Note: This article is still a draft, hence the blank sections at the bottom. Thanks for stopping by either way!&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;I am fascinated by pushing the boundaries of software. A few years ago, I read &lt;a href=&quot;https://engineering.linkedin.com/distributed-systems/log-what-every-software-engineer-should-know-about-real-time-datas-unifying&quot;&gt;this marvelous piece about Logs&lt;/a&gt; - not messages for debugging, but using a log as a data structure. Ever since, the power of logs and capturing events has fascinated me.&lt;/p&gt;
 &lt;p&gt;Not long after that piece about real-time data and logs, I started to watch and read up on &lt;a href=&quot;https://martinfowler.com/eaaDev/EventSourcing.html&quot;&gt;Event Sourcing&lt;/a&gt;. I am not the first to write about event sourcing, CQRS, or other related topics. Rather, this article aims to be the kind of content I wished I had when I first started down this rabbit hole.&lt;/p&gt;
